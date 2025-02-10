@@ -1,7 +1,6 @@
 CREATE TABLE SSD (
     id INT NOT NULL,
     capacity INT NOT NULL,
-    wattage DECIMAL(6, 2) NOT NULL,
     PRIMARY KEY (id),
     CONSTRAINT FK_SSD_PRODUCT FOREIGN KEY (id) 
         REFERENCES product (id) 
