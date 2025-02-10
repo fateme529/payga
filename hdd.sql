@@ -1,18 +1,19 @@
-
 USE payga;
 
-CREATE TABLE motherboard (
+
+CREATE TABLE hdd (
     id INT NOT NULL,
-    chipset VARCHAR(100) NOT NULL,
-    number_of_memory_slots INT NOT NULL,
-    memory_speed_range VARCHAR(100) NOT NULL,
+    rotational_speed INT NOT NULL,
     wattage DECIMAL(8, 2) NOT NULL,
+    capacity INT NOT NULL,
     height DECIMAL(8, 2) NULL,
     width DECIMAL(8, 2) NOT NULL,
     depth DECIMAL(8, 2) NOT NULL,
-    PRIMARY KEY (id),
-    CONSTRAINT FK_MOTHERBOARD_PRODUCT FOREIGN KEY (id)
+    PRIMARY KEY (ID),
+    CONSTRAINT FK_HDD_PRODUCT FOREIGN KEY (ID)
         REFERENCES product (id)
         ON DELETE CASCADE
         ON UPDATE CASCADE
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
