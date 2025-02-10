@@ -8,7 +8,7 @@ CREATE TABLE client (
     last_name VARCHAR(50) NOT NULL,
     wallet_balance DECIMAL(18, 2) DEFAULT 0.00, 
     timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
-    referal_code VARCHAR(20),
+    referal_code INT(20),
     PRIMARY KEY (id),
     UNIQUE KEY Unique_Phone (phone_number),
     CHECK (wallet_balance >= 0) 
