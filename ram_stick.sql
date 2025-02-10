@@ -6,9 +6,9 @@ CREATE TABLE ram_stick (
     capacity INT NOT NULL,
     generation VARCHAR(50) NOT NULL,
     wattage DECIMAL(6, 2) NOT NULL,
-	Height DECIMAL(6, 2) NULL,
-    Width DECIMAL(6, 2) NOT NULL,
-    Depth DECIMAL(6, 2) NOT NULL,
+	height DECIMAL(6, 2) NULL,
+    width DECIMAL(6, 2) NOT NULL,
+    depth DECIMAL(6, 2) NOT NULL,
     PRIMARY KEY (id),
     CONSTRAINT FK_RAM_STICK_PRODUCT FOREIGN KEY (id) 
         REFERENCES product (id) 
