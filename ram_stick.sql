@@ -1,11 +1,12 @@
-CREATE DATABASE IF NOT EXISTS payga;
-USE payga;
-
-CREATE TABLE RAM_STICK (
-    ID INT NOT NULL,
-    Capacity INT NOT NULL,
-    Wattage DECIMAL(6, 2) DEFAULT NULL,
-    PRIMARY KEY (ID),
-    CONSTRAINT FK_RAM_STICK_PRODUCT FOREIGN KEY (ID)
-        REFERENCES product (id)
-) ENGINE=InnoDB;
+CREATE TABLE ram_stick (
+    id INT NOT NULL,
+    frequency INT NOT NULL,
+    capacity INT NOT NULL,
+    generation VARCHAR(50) NOT NULL,
+    wattage DECIMAL(6, 2) NULL,
+    PRIMARY KEY (id),
+    CONSTRAINT FK_RAM_STICK_PRODUCT FOREIGN KEY (id) 
+        REFERENCES product (id) 
+        ON DELETE CASCADE 
+        ON UPDATE CASCADE
+);
