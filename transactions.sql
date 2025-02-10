@@ -8,7 +8,5 @@ CREATE TABLE IF NOT EXISTS transactions (
     PRIMARY KEY (tracking_code) 
 ) ENGINE=InnoDB;
 
-
 ALTER TABLE transactions
 ADD CONSTRAINT chk_status CHECK (status IN ('partially_successful', 'failed', 'successful'));
-
