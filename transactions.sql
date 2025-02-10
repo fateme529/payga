@@ -4,7 +4,7 @@ USE payga;
 CREATE TABLE IF NOT EXISTS transactions (
     tracking_code INT NOT NULL AUTO_INCREMENT,
     status VARCHAR(20) NOT NULL,
-    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP, 
+	trans_time DATETIME NOT NULL, 
     PRIMARY KEY (tracking_code) 
 ) ENGINE=InnoDB;
 
