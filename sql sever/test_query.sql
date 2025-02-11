@@ -22,3 +22,5 @@ VALUES (
     1205
 );
 
+INSERT INTO added_to(client_id,cart_number,locked_number,product_id)
+values()
