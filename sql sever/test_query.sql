@@ -14,6 +14,8 @@ select*from product
 select*from locked_shopping_cart
 select*from added_to
 select*from applied_to
+select*from transactions
+select*from subscribes
 
 INSERT INTO discount_code(dis_code,amount,dis_limit,usage_count,expiration_date)
 VALUES ('all_free_0',50,1000000,1,'2001/10/9')
@@ -42,8 +44,11 @@ values(8,802,3,8,6)
 INSERT INTO applied_to(client_id,cart_number,locked_number,app_code)
 VALUES(8,802,3,'DISCOUNT_8_1')
 
-insert
+INSERT INTO transactions(status)
+VALUES('')
 
+INSERT INTO subscribes(tracking_code,id)
+VALUES(1,8)
 
 INSERT INTO vip_client(id, Subscription_expiration_time)
 VALUES (6, CONVERT(DATE, '2004-10-07', 120));
