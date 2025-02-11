@@ -1,4 +1,3 @@
-
 CREATE TRIGGER trg_Delete_Refers
 ON client
 INSTEAD OF DELETE
