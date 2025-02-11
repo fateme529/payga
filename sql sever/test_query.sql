@@ -11,16 +11,22 @@ select* from private_code
 select*from discount_code
 select*from shopping_cart
 select*from product
+select*from locked_shopping_cart
 
+INSERT INTO locked_shopping_cart(id,cart_number)
+VALUES (8,802)
 INSERT INTO product(category, image, current_price, stock_count, brand, model)
 VALUES (
     'laptop', 
     (SELECT BulkColumn FROM OPENROWSET(BULK 'C:\Users\fdama\Pictures\smail.PNG', SINGLE_BLOB) AS img), 
     100000, 
-    1, 
+    5, 
     'dell', 
     1205
 );
 
 INSERT INTO added_to(client_id,cart_number,locked_number,product_id)
-values()
+values(8,802,3,3)
+
+INSERT INTO applied_to(client_id,cart_number,locked_number,app_code)
+VALUES(8,802,DISCOUNT_3_1,10)
