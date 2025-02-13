@@ -22,6 +22,7 @@ select*from Cart_Total_Discount
 select*from added_to
 select*from product
 select*from issued_for
+select* from wallet_transaction
 
 INSERT INTO discount_code(dis_code,amount,dis_limit,usage_count,expiration_date)
 VALUES ('all_free_0',50,1000000,1,'2001/10/9')
@@ -53,7 +54,11 @@ INSERT INTO transactions(status)
 VALUES('successful')
 
 INSERT INTO subscribes(tracking_code,id)
-VALUES(1,8)
+VALUES(10,44)
+
+
+INSERT INTO deposits_into_wallet(tracking_code,id,amount)
+VALUES(10,44,100000)
 INSERT INTO shopping_cart(id,number,status)
 VALUES(42,4203,'blocked')
 
