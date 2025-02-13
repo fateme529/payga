@@ -35,9 +35,6 @@ EXEC @ReturnCode = msdb.dbo.sp_add_jobstep @job_id=@jobId,
     @os_run_priority=0, 
     @subsystem=N'TSQL', 
     @command=N'
-        DELETE FROM shopping_cart
-        WHERE number BETWEEN ((SELECT id FROM VIP_CLIENT WHERE Subscription_expiration_time <= GETDATE()) * 100 + 2)
-                        AND ((SELECT id FROM VIP_CLIENT WHERE Subscription_expiration_time <= GETDATE()) * 100 + 5);
 
         DELETE FROM VIP_CLIENT
         WHERE Subscription_expiration_time <= GETDATE();
