@@ -29,7 +29,7 @@ VALUES ('all_free_0',50,1000000,1,'2001/10/9')
 INSERT INTO vip_client(id,Subscription_expiration_time)
 VALUES(4,'2027-10-07')
 INSERT INTO locked_shopping_cart(id,cart_number)
-VALUES (9,903)
+VALUES (9,904)
 INSERT INTO public_code (pub_code)
 values('all_free')
 
@@ -39,13 +39,13 @@ VALUES (
     'laptop', 
     (SELECT BulkColumn FROM OPENROWSET(BULK 'C:\Users\fdama\Pictures\smail.PNG', SINGLE_BLOB) AS img), 
     10000000, 
-    5, 
+    15, 
     'dell', 
     1205
 );
 
 INSERT INTO added_to(client_id,cart_number,locked_number,product_id,quantity)
-values(4,402,9,9,5)
+values(9,904,21,16,15)
 
 INSERT INTO applied_to(client_id,cart_number,locked_number,app_code)
 VALUES(4,402,9,'id_discount_4_178ACED1')
@@ -55,6 +55,8 @@ VALUES('successful')
 
 INSERT INTO subscribes(tracking_code,id)
 VALUES(1,8)
+INSERT INTO shopping_cart(id,number,status)
+VALUES(9,90009,'blocked')
 
 INSERT INTO vip_client(id, Subscription_expiration_time)
 VALUES (6, CONVERT(DATE, '2004-10-07', 120));
