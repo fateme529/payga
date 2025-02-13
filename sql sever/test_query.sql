@@ -28,8 +28,7 @@ VALUES ('all_free_0',50,1000000,1,'2001/10/9')
 
 INSERT INTO vip_client(id,Subscription_expiration_time)
 VALUES(4,'2027-10-07')
-INSERT INTO locked_shopping_cart(id,cart_number)
-VALUES (9,904)
+
 INSERT INTO public_code (pub_code)
 values('all_free')
 
@@ -56,13 +55,16 @@ VALUES('successful')
 INSERT INTO subscribes(tracking_code,id)
 VALUES(1,8)
 INSERT INTO shopping_cart(id,number,status)
-VALUES(9,90009,'blocked')
+VALUES(42,4203,'blocked')
 
 INSERT INTO vip_client(id, Subscription_expiration_time)
-VALUES (6, CONVERT(DATE, '2004-10-07', 120));
+VALUES (42, CONVERT(DATE, '2028-10-07 ', 120));
+
+INSERT INTO locked_shopping_cart(id,cart_number)
+VALUES (42,4202)
 
 INSERT INTO client(phone_number,first_name,last_name,referal_code)
-VALUES(90099979000,'hale','samavat',4)
+VALUES(900999088,'hale','samavat',4)
 
 
 INSERT INTO issued_for(tracking_code,id_client,cart_number,locked_number)
