@@ -1,5 +1,5 @@
-ALTER TRIGGER trg_UpdateClientWalletBalance
-ON wallet_transaction
+CREATE TRIGGER trg_UpdateClientWalletBalance
+ON deposits_into_wallet
 AFTER INSERT
 AS
 BEGIN

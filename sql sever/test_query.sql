@@ -23,6 +23,10 @@ select*from added_to
 select*from product
 select*from issued_for
 select* from wallet_transaction
+select* from bank_transaction
+select* from deposits_into_wallet
+
+
 
 INSERT INTO discount_code(dis_code,amount,dis_limit,usage_count,expiration_date)
 VALUES ('all_free_0',50,1000000,1,'2001/10/9')
@@ -74,6 +78,15 @@ VALUES(900999088,'hale','samavat',4)
 
 INSERT INTO issued_for(tracking_code,id_client,cart_number,locked_number)
 VALUES(5,9,903,6)
+
+
+INSERT bank_transaction (tracking_code,card_number)
+VALUES(11,63040337398644310)
+
+INSERT deposits_into_wallet(tracking_code,id,amount)
+VALUES(11,43,50000000)
+
+
 
 DELETE FROM applied_to;
 DELETE FROM private_code;
