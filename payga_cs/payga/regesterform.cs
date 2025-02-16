@@ -10,13 +10,15 @@ using System.Windows.Forms;
 
 namespace payga
 {
-    public partial class Form1 : Form
+    public partial class regesterform : Form
     {
-        public Form1()
+        public regesterform()
         {
             InitializeComponent();
         }
 
+        regesterform regform = new regesterform();
+        regform.show();
         private void button2_Click(object sender, EventArgs e)
         {
 
@@ -69,7 +71,7 @@ namespace payga
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
     }
 }
