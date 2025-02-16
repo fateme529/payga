@@ -1,0 +1,929 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="added_to">
+    <Key>
+      <PropertyRef Name="client_id" />
+      <PropertyRef Name="cart_number" />
+      <PropertyRef Name="locked_number" />
+      <PropertyRef Name="product_id" />
+    </Key>
+    <Property Name="client_id" Type="Int32" Nullable="false" />
+    <Property Name="cart_number" Type="Int32" Nullable="false" />
+    <Property Name="locked_number" Type="Int32" Nullable="false" />
+    <Property Name="product_id" Type="Int32" Nullable="false" />
+    <Property Name="quantity" Type="Int32" />
+    <Property Name="cart_price" Type="Decimal" Precision="25" Scale="2" />
+    <NavigationProperty Name="locked_shopping_cart" Relationship="Self.fk_added_to_locked" FromRole="added_to" ToRole="locked_shopping_cart" />
+    <NavigationProperty Name="product" Relationship="Self.fk_added_to_product" FromRole="added_to" ToRole="product" />
+  </EntityType>
+  <EntityType Name="address">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="province" />
+      <PropertyRef Name="remainder" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="province" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="remainder" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="client" Relationship="Self.fk_address" FromRole="address" ToRole="client" />
+  </EntityType>
+  <EntityType Name="applied_to">
+    <Key>
+      <PropertyRef Name="client_id" />
+      <PropertyRef Name="cart_number" />
+      <PropertyRef Name="locked_number" />
+      <PropertyRef Name="app_code" />
+    </Key>
+    <Property Name="client_id" Type="Int32" Nullable="false" />
+    <Property Name="cart_number" Type="Int32" Nullable="false" />
+    <Property Name="locked_number" Type="Int32" Nullable="false" />
+    <Property Name="app_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="app_time" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="discount_code" Relationship="Self.fk_applied_to_code" FromRole="applied_to" ToRole="discount_code" />
+    <NavigationProperty Name="locked_shopping_cart" Relationship="Self.fk_applied_to_locked_number" FromRole="applied_to" ToRole="locked_shopping_cart" />
+  </EntityType>
+  <EntityType Name="bank_transaction">
+    <Key>
+      <PropertyRef Name="tracking_code" />
+    </Key>
+    <Property Name="tracking_code" Type="Int32" Nullable="false" />
+    <Property Name="card_number" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="transaction" Relationship="Self.fk_bank_transaction" FromRole="bank_transaction" ToRole="transactions" />
+    <NavigationProperty Name="deposits_into_wallet" Relationship="Self.fk_deposits_into_wallet_transaction" FromRole="bank_transaction" ToRole="deposits_into_wallet" />
+  </EntityType>
+  <EntityType Name="client">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="phone_number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="wallet_balance" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="timestamp" Type="DateTime" Precision="3" />
+    <Property Name="referal_code" Type="Int32" />
+    <Property Name="user_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="addresses" Relationship="Self.fk_address" FromRole="client" ToRole="address" />
+    <NavigationProperty Name="shopping_cart" Relationship="Self.fk_client_id" FromRole="client" ToRole="shopping_cart" />
+    <NavigationProperty Name="deposits_into_wallet" Relationship="Self.fk_deposits_into_wallet_client" FromRole="client" ToRole="deposits_into_wallet" />
+    <NavigationProperty Name="private_code" Relationship="Self.fk_private_code_client" FromRole="client" ToRole="private_code" />
+    <NavigationProperty Name="refer" Relationship="Self.fk_refers_referee" FromRole="client" ToRole="refers" />
+    <NavigationProperty Name="refers" Relationship="Self.fk_refers_referrer" FromRole="client" ToRole="refers" />
+    <NavigationProperty Name="vip_client" Relationship="Self.fk_vip" FromRole="client" ToRole="vip_client" />
+    <NavigationProperty Name="transactions" Relationship="Self.subscribes" FromRole="client" ToRole="transactions" />
+  </EntityType>
+  <EntityType Name="cooler">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="maximum_rotational_speed" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="wattage" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="fan_size" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="cooling_method" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="height" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="width" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="depth" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <NavigationProperty Name="product" Relationship="Self.FK_COOLER_PRODUCT" FromRole="cooler" ToRole="product" />
+    <NavigationProperty Name="cpus" Relationship="Self.cc_socket_compatible_with" FromRole="cooler" ToRole="cpu" />
+  </EntityType>
+  <EntityType Name="cpu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="maximum_addressable_memory_limit" Type="Int32" Nullable="false" />
+    <Property Name="boost_frequency" Type="Decimal" Precision="8" Scale="4" Nullable="false" />
+    <Property Name="base_frequency" Type="Decimal" Precision="8" Scale="4" Nullable="false" />
+    <Property Name="number_of_cores" Type="Int32" Nullable="false" />
+    <Property Name="number_of_Threads" Type="Int32" Nullable="false" />
+    <Property Name="microarchitecture" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="generation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="wattage" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <NavigationProperty Name="product" Relationship="Self.FK_CPU_PRODUCT" FromRole="cpu" ToRole="product" />
+    <NavigationProperty Name="coolers" Relationship="Self.cc_socket_compatible_with" FromRole="cpu" ToRole="cooler" />
+    <NavigationProperty Name="motherboards" Relationship="Self.ms_socket_compatible_with" FromRole="cpu" ToRole="motherboard" />
+  </EntityType>
+  <EntityType Name="deposits_into_wallet">
+    <Key>
+      <PropertyRef Name="tracking_code" />
+    </Key>
+    <Property Name="tracking_code" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="amount" Type="Decimal" Precision="25" Scale="2" Nullable="false" />
+    <NavigationProperty Name="bank_transaction" Relationship="Self.fk_deposits_into_wallet_transaction" FromRole="deposits_into_wallet" ToRole="bank_transaction" />
+    <NavigationProperty Name="client" Relationship="Self.fk_deposits_into_wallet_client" FromRole="deposits_into_wallet" ToRole="client" />
+  </EntityType>
+  <EntityType Name="discount_code">
+    <Key>
+      <PropertyRef Name="dis_code" />
+    </Key>
+    <Property Name="dis_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="amount" Type="Decimal" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="dis_limit" Type="Decimal" Precision="15" Scale="2" />
+    <Property Name="usage_count" Type="Int32" />
+    <Property Name="expiration_date" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="applied_to" Relationship="Self.fk_applied_to_code" FromRole="discount_code" ToRole="applied_to" />
+    <NavigationProperty Name="private_code" Relationship="Self.fk_private_code_discount_code" FromRole="discount_code" ToRole="private_code" />
+    <NavigationProperty Name="public_code" Relationship="Self.fk_public" FromRole="discount_code" ToRole="public_code" />
+  </EntityType>
+  <EntityType Name="gpu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="clock_speed" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="ram_size" Type="Int32" Nullable="false" />
+    <Property Name="number_of_fans" Type="Int32" Nullable="false" />
+    <Property Name="wattage" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="height" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="width" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="depth" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <NavigationProperty Name="product" Relationship="Self.FK_GPU_PRODUCT" FromRole="gpu" ToRole="product" />
+    <NavigationProperty Name="motherboards" Relationship="Self.gm_slot_compatible_with" FromRole="gpu" ToRole="motherboard" />
+    <NavigationProperty Name="power_supply" Relationship="Self.gp_connector_compatible_with" FromRole="gpu" ToRole="power_supply" />
+  </EntityType>
+  <EntityType Name="hdd">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="rotational_speed" Type="Int32" Nullable="false" />
+    <Property Name="wattage" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="capacity" Type="Int32" Nullable="false" />
+    <Property Name="height" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="width" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="depth" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <NavigationProperty Name="product" Relationship="Self.FK_HDD_PRODUCT" FromRole="hdd" ToRole="product" />
+  </EntityType>
+  <EntityType Name="locked_shopping_cart">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="cart_number" />
+      <PropertyRef Name="number_lock" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="cart_number" Type="Int32" Nullable="false" />
+    <Property Name="number_lock" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="locked_time" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="added_to" Relationship="Self.fk_added_to_locked" FromRole="locked_shopping_cart" ToRole="added_to" />
+    <NavigationProperty Name="applied_to" Relationship="Self.fk_applied_to_locked_number" FromRole="locked_shopping_cart" ToRole="applied_to" />
+    <NavigationProperty Name="shopping_cart" Relationship="Self.fk_locked_shopping_cart" FromRole="locked_shopping_cart" ToRole="shopping_cart" />
+    <NavigationProperty Name="transactions" Relationship="Self.issued_for" FromRole="locked_shopping_cart" ToRole="transactions" />
+  </EntityType>
+  <EntityType Name="motherboard">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="chipset" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="number_of_memory_slots" Type="Int32" Nullable="false" />
+    <Property Name="memory_speed_range" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="wattage" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="height" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="width" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="depth" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <NavigationProperty Name="sm_slot_compatible_with" Relationship="Self.fk_motherboard_id_sm" FromRole="motherboard" ToRole="sm_slot_compatible_with" />
+    <NavigationProperty Name="product" Relationship="Self.FK_MOTHERBOARD_PRODUCT" FromRole="motherboard" ToRole="product" />
+    <NavigationProperty Name="gpus" Relationship="Self.gm_slot_compatible_with" FromRole="motherboard" ToRole="gpu" />
+    <NavigationProperty Name="cpus" Relationship="Self.ms_socket_compatible_with" FromRole="motherboard" ToRole="cpu" />
+    <NavigationProperty Name="ram_stick" Relationship="Self.rm_slot_compatible_with" FromRole="motherboard" ToRole="ram_stick" />
+  </EntityType>
+  <EntityType Name="p_case">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="number_of_fans" Type="Int32" Nullable="false" />
+    <Property Name="fan_size" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="wattage" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="case_type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="material" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="color" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="height" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="width" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="depth" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <NavigationProperty Name="product" Relationship="Self.FK_CASE_PRODUCT" FromRole="p_case" ToRole="product" />
+  </EntityType>
+  <EntityType Name="power_supply">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="supported_wattage" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="height" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="width" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="depth" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <NavigationProperty Name="product" Relationship="Self.FK_POWER_SUPPLY_PRODUCT" FromRole="power_supply" ToRole="product" />
+    <NavigationProperty Name="gpus" Relationship="Self.gp_connector_compatible_with" FromRole="power_supply" ToRole="gpu" />
+  </EntityType>
+  <EntityType Name="private_code">
+    <Key>
+      <PropertyRef Name="pri_code" />
+    </Key>
+    <Property Name="pri_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="pri_time" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="client" Relationship="Self.fk_private_code_client" FromRole="private_code" ToRole="client" />
+    <NavigationProperty Name="discount_code" Relationship="Self.fk_private_code_discount_code" FromRole="private_code" ToRole="discount_code" />
+  </EntityType>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="category" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="current_price" Type="Decimal" Precision="25" Scale="2" Nullable="false" />
+    <Property Name="stock_count" Type="Int32" Nullable="false" />
+    <Property Name="brand" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="model" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="added_to" Relationship="Self.fk_added_to_product" FromRole="product" ToRole="added_to" />
+    <NavigationProperty Name="cooler" Relationship="Self.FK_COOLER_PRODUCT" FromRole="product" ToRole="cooler" />
+    <NavigationProperty Name="cpu" Relationship="Self.FK_CPU_PRODUCT" FromRole="product" ToRole="cpu" />
+    <NavigationProperty Name="gpu" Relationship="Self.FK_GPU_PRODUCT" FromRole="product" ToRole="gpu" />
+    <NavigationProperty Name="hdd" Relationship="Self.FK_HDD_PRODUCT" FromRole="product" ToRole="hdd" />
+    <NavigationProperty Name="motherboard" Relationship="Self.FK_MOTHERBOARD_PRODUCT" FromRole="product" ToRole="motherboard" />
+    <NavigationProperty Name="p_case" Relationship="Self.FK_CASE_PRODUCT" FromRole="product" ToRole="p_case" />
+    <NavigationProperty Name="power_supply" Relationship="Self.FK_POWER_SUPPLY_PRODUCT" FromRole="product" ToRole="power_supply" />
+    <NavigationProperty Name="ram_stick" Relationship="Self.FK_RAM_STICK_PRODUCT" FromRole="product" ToRole="ram_stick" />
+    <NavigationProperty Name="SSD" Relationship="Self.FK_SSD_PRODUCT" FromRole="product" ToRole="SSD" />
+  </EntityType>
+  <EntityType Name="public_code">
+    <Key>
+      <PropertyRef Name="pub_code" />
+    </Key>
+    <Property Name="pub_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="discount_code" Relationship="Self.fk_public" FromRole="public_code" ToRole="discount_code" />
+  </EntityType>
+  <EntityType Name="ram_stick">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="frequency" Type="Int32" Nullable="false" />
+    <Property Name="capacity" Type="Int32" Nullable="false" />
+    <Property Name="generation" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="wattage" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="height" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="width" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="depth" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <NavigationProperty Name="product" Relationship="Self.FK_RAM_STICK_PRODUCT" FromRole="ram_stick" ToRole="product" />
+    <NavigationProperty Name="motherboards" Relationship="Self.rm_slot_compatible_with" FromRole="ram_stick" ToRole="motherboard" />
+  </EntityType>
+  <EntityType Name="refer">
+    <Key>
+      <PropertyRef Name="referee" />
+    </Key>
+    <Property Name="referee" Type="Int32" Nullable="false" />
+    <Property Name="referrer" Type="Int32" />
+    <NavigationProperty Name="client" Relationship="Self.fk_refers_referee" FromRole="refers" ToRole="client" />
+    <NavigationProperty Name="client1" Relationship="Self.fk_refers_referrer" FromRole="refers" ToRole="client" />
+  </EntityType>
+  <EntityType Name="shopping_cart">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="number" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="number" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="client" Relationship="Self.fk_client_id" FromRole="shopping_cart" ToRole="client" />
+    <NavigationProperty Name="locked_shopping_cart" Relationship="Self.fk_locked_shopping_cart" FromRole="shopping_cart" ToRole="locked_shopping_cart" />
+  </EntityType>
+  <EntityType Name="sm_slot_compatible_with">
+    <Key>
+      <PropertyRef Name="motherboard_id_sm" />
+      <PropertyRef Name="ssd_id_sm" />
+    </Key>
+    <Property Name="motherboard_id_sm" Type="Int32" Nullable="false" />
+    <Property Name="ssd_id_sm" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="motherboard" Relationship="Self.fk_motherboard_id_sm" FromRole="sm_slot_compatible_with" ToRole="motherboard" />
+  </EntityType>
+  <EntityType Name="SSD">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="capacity" Type="Int32" Nullable="false" />
+    <Property Name="wattage" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <NavigationProperty Name="product" Relationship="Self.FK_SSD_PRODUCT" FromRole="SSD" ToRole="product" />
+  </EntityType>
+  <EntityType Name="transaction">
+    <Key>
+      <PropertyRef Name="tracking_code" />
+    </Key>
+    <Property Name="tracking_code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="timestamp" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="bank_transaction" Relationship="Self.fk_bank_transaction" FromRole="transactions" ToRole="bank_transaction" />
+    <NavigationProperty Name="wallet_transaction" Relationship="Self.fk_wallet_transaction" FromRole="transactions" ToRole="wallet_transaction" />
+    <NavigationProperty Name="locked_shopping_cart" Relationship="Self.issued_for" FromRole="transactions" ToRole="locked_shopping_cart" />
+    <NavigationProperty Name="client" Relationship="Self.subscribes" FromRole="transactions" ToRole="client" />
+  </EntityType>
+  <EntityType Name="vip_client">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="Subscription_expiration_time" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="client" Relationship="Self.fk_vip" FromRole="vip_client" ToRole="client" />
+  </EntityType>
+  <EntityType Name="wallet_transaction">
+    <Key>
+      <PropertyRef Name="tracking_code" />
+    </Key>
+    <Property Name="tracking_code" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="transaction" Relationship="Self.fk_wallet_transaction" FromRole="wallet_transaction" ToRole="transactions" />
+  </EntityType>
+  <EntityType Name="Cart_Total_Discount">
+    <Key>
+      <PropertyRef Name="cart_number" />
+      <PropertyRef Name="locked_number" />
+    </Key>
+    <Property Name="cart_number" Type="Int32" Nullable="false" />
+    <Property Name="locked_number" Type="Int32" Nullable="false" />
+    <Property Name="cart_total" Type="Decimal" Precision="38" Scale="2" />
+    <Property Name="discount_codes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="total_discount_amount" Type="Decimal" Precision="38" Scale="6" />
+    <Property Name="final_total" Type="Decimal" Precision="38" Scale="2" />
+  </EntityType>
+  <Association Name="fk_added_to_locked">
+    <End Role="locked_shopping_cart" Type="Self.locked_shopping_cart" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="added_to" Type="Self.added_to" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="locked_shopping_cart">
+        <PropertyRef Name="id" />
+        <PropertyRef Name="cart_number" />
+        <PropertyRef Name="number_lock" />
+      </Principal>
+      <Dependent Role="added_to">
+        <PropertyRef Name="client_id" />
+        <PropertyRef Name="cart_number" />
+        <PropertyRef Name="locked_number" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_added_to_product">
+    <End Role="product" Type="Self.product" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="added_to" Type="Self.added_to" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="added_to">
+        <PropertyRef Name="product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_address">
+    <End Role="client" Type="Self.client" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="address" Type="Self.address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="client">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="address">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_applied_to_code">
+    <End Role="discount_code" Type="Self.discount_code" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="applied_to" Type="Self.applied_to" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="discount_code">
+        <PropertyRef Name="dis_code" />
+      </Principal>
+      <Dependent Role="applied_to">
+        <PropertyRef Name="app_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_applied_to_locked_number">
+    <End Role="locked_shopping_cart" Type="Self.locked_shopping_cart" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="applied_to" Type="Self.applied_to" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="locked_shopping_cart">
+        <PropertyRef Name="id" />
+        <PropertyRef Name="cart_number" />
+        <PropertyRef Name="number_lock" />
+      </Principal>
+      <Dependent Role="applied_to">
+        <PropertyRef Name="client_id" />
+        <PropertyRef Name="cart_number" />
+        <PropertyRef Name="locked_number" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_bank_transaction">
+    <End Role="transactions" Type="Self.transaction" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="bank_transaction" Type="Self.bank_transaction" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="transactions">
+        <PropertyRef Name="tracking_code" />
+      </Principal>
+      <Dependent Role="bank_transaction">
+        <PropertyRef Name="tracking_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_deposits_into_wallet_transaction">
+    <End Role="bank_transaction" Type="Self.bank_transaction" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="deposits_into_wallet" Type="Self.deposits_into_wallet" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="bank_transaction">
+        <PropertyRef Name="tracking_code" />
+      </Principal>
+      <Dependent Role="deposits_into_wallet">
+        <PropertyRef Name="tracking_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_client_id">
+    <End Role="client" Type="Self.client" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="shopping_cart" Type="Self.shopping_cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="client">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="shopping_cart">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_deposits_into_wallet_client">
+    <End Role="client" Type="Self.client" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="deposits_into_wallet" Type="Self.deposits_into_wallet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="client">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="deposits_into_wallet">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_private_code_client">
+    <End Role="client" Type="Self.client" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="private_code" Type="Self.private_code" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="client">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="private_code">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_refers_referee">
+    <End Role="client" Type="Self.client" Multiplicity="1" />
+    <End Role="refers" Type="Self.refer" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="client">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="refers">
+        <PropertyRef Name="referee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_refers_referrer">
+    <End Role="client" Type="Self.client" Multiplicity="0..1" />
+    <End Role="refers" Type="Self.refer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="client">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="refers">
+        <PropertyRef Name="referrer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_vip">
+    <End Role="client" Type="Self.client" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="vip_client" Type="Self.vip_client" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="client">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="vip_client">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_COOLER_PRODUCT">
+    <End Role="product" Type="Self.product" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="cooler" Type="Self.cooler" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="cooler">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CPU_PRODUCT">
+    <End Role="product" Type="Self.product" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="cpu" Type="Self.cpu" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="cpu">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_private_code_discount_code">
+    <End Role="discount_code" Type="Self.discount_code" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="private_code" Type="Self.private_code" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="discount_code">
+        <PropertyRef Name="dis_code" />
+      </Principal>
+      <Dependent Role="private_code">
+        <PropertyRef Name="pri_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_public">
+    <End Role="discount_code" Type="Self.discount_code" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="public_code" Type="Self.public_code" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="discount_code">
+        <PropertyRef Name="dis_code" />
+      </Principal>
+      <Dependent Role="public_code">
+        <PropertyRef Name="pub_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GPU_PRODUCT">
+    <End Role="product" Type="Self.product" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="gpu" Type="Self.gpu" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="gpu">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HDD_PRODUCT">
+    <End Role="product" Type="Self.product" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="hdd" Type="Self.hdd" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="hdd">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_locked_shopping_cart">
+    <End Role="shopping_cart" Type="Self.shopping_cart" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="locked_shopping_cart" Type="Self.locked_shopping_cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="shopping_cart">
+        <PropertyRef Name="id" />
+        <PropertyRef Name="number" />
+      </Principal>
+      <Dependent Role="locked_shopping_cart">
+        <PropertyRef Name="id" />
+        <PropertyRef Name="cart_number" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_motherboard_id_sm">
+    <End Role="motherboard" Type="Self.motherboard" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sm_slot_compatible_with" Type="Self.sm_slot_compatible_with" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="motherboard">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="sm_slot_compatible_with">
+        <PropertyRef Name="motherboard_id_sm" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MOTHERBOARD_PRODUCT">
+    <End Role="product" Type="Self.product" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="motherboard" Type="Self.motherboard" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="motherboard">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CASE_PRODUCT">
+    <End Role="product" Type="Self.product" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="p_case" Type="Self.p_case" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="p_case">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_POWER_SUPPLY_PRODUCT">
+    <End Role="product" Type="Self.product" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="power_supply" Type="Self.power_supply" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="power_supply">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RAM_STICK_PRODUCT">
+    <End Role="product" Type="Self.product" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ram_stick" Type="Self.ram_stick" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ram_stick">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SSD_PRODUCT">
+    <End Role="product" Type="Self.product" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SSD" Type="Self.SSD" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SSD">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_wallet_transaction">
+    <End Role="transactions" Type="Self.transaction" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="wallet_transaction" Type="Self.wallet_transaction" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="transactions">
+        <PropertyRef Name="tracking_code" />
+      </Principal>
+      <Dependent Role="wallet_transaction">
+        <PropertyRef Name="tracking_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="cc_socket_compatible_with">
+    <End Role="cooler" Type="Self.cooler" Multiplicity="*" />
+    <End Role="cpu" Type="Self.cpu" Multiplicity="*" />
+  </Association>
+  <Association Name="gm_slot_compatible_with">
+    <End Role="gpu" Type="Self.gpu" Multiplicity="*" />
+    <End Role="motherboard" Type="Self.motherboard" Multiplicity="*" />
+  </Association>
+  <Association Name="gp_connector_compatible_with">
+    <End Role="gpu" Type="Self.gpu" Multiplicity="*" />
+    <End Role="power_supply" Type="Self.power_supply" Multiplicity="*" />
+  </Association>
+  <Association Name="issued_for">
+    <End Role="locked_shopping_cart" Type="Self.locked_shopping_cart" Multiplicity="0..1" />
+    <End Role="transactions" Type="Self.transaction" Multiplicity="*" />
+  </Association>
+  <Association Name="ms_socket_compatible_with">
+    <End Role="cpu" Type="Self.cpu" Multiplicity="*" />
+    <End Role="motherboard" Type="Self.motherboard" Multiplicity="*" />
+  </Association>
+  <Association Name="rm_slot_compatible_with">
+    <End Role="motherboard" Type="Self.motherboard" Multiplicity="*" />
+    <End Role="ram_stick" Type="Self.ram_stick" Multiplicity="*" />
+  </Association>
+  <Association Name="subscribes">
+    <End Role="client" Type="Self.client" Multiplicity="0..1" />
+    <End Role="transactions" Type="Self.transaction" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="db_1Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="added_to" EntityType="Self.added_to" />
+    <EntitySet Name="addresses" EntityType="Self.address" />
+    <EntitySet Name="applied_to" EntityType="Self.applied_to" />
+    <EntitySet Name="bank_transaction" EntityType="Self.bank_transaction" />
+    <EntitySet Name="clients" EntityType="Self.client" />
+    <EntitySet Name="coolers" EntityType="Self.cooler" />
+    <EntitySet Name="cpus" EntityType="Self.cpu" />
+    <EntitySet Name="deposits_into_wallet" EntityType="Self.deposits_into_wallet" />
+    <EntitySet Name="discount_code" EntityType="Self.discount_code" />
+    <EntitySet Name="gpus" EntityType="Self.gpu" />
+    <EntitySet Name="hdds" EntityType="Self.hdd" />
+    <EntitySet Name="locked_shopping_cart" EntityType="Self.locked_shopping_cart" />
+    <EntitySet Name="motherboards" EntityType="Self.motherboard" />
+    <EntitySet Name="p_case" EntityType="Self.p_case" />
+    <EntitySet Name="power_supply" EntityType="Self.power_supply" />
+    <EntitySet Name="private_code" EntityType="Self.private_code" />
+    <EntitySet Name="products" EntityType="Self.product" />
+    <EntitySet Name="public_code" EntityType="Self.public_code" />
+    <EntitySet Name="ram_stick" EntityType="Self.ram_stick" />
+    <EntitySet Name="refers" EntityType="Self.refer" />
+    <EntitySet Name="shopping_cart" EntityType="Self.shopping_cart" />
+    <EntitySet Name="sm_slot_compatible_with" EntityType="Self.sm_slot_compatible_with" />
+    <EntitySet Name="SSDs" EntityType="Self.SSD" />
+    <EntitySet Name="transactions" EntityType="Self.transaction" />
+    <EntitySet Name="vip_client" EntityType="Self.vip_client" />
+    <EntitySet Name="wallet_transaction" EntityType="Self.wallet_transaction" />
+    <EntitySet Name="Cart_Total_Discount" EntityType="Self.Cart_Total_Discount" />
+    <AssociationSet Name="fk_added_to_locked" Association="Self.fk_added_to_locked">
+      <End Role="locked_shopping_cart" EntitySet="locked_shopping_cart" />
+      <End Role="added_to" EntitySet="added_to" />
+    </AssociationSet>
+    <AssociationSet Name="fk_added_to_product" Association="Self.fk_added_to_product">
+      <End Role="product" EntitySet="products" />
+      <End Role="added_to" EntitySet="added_to" />
+    </AssociationSet>
+    <AssociationSet Name="fk_address" Association="Self.fk_address">
+      <End Role="client" EntitySet="clients" />
+      <End Role="address" EntitySet="addresses" />
+    </AssociationSet>
+    <AssociationSet Name="fk_applied_to_code" Association="Self.fk_applied_to_code">
+      <End Role="discount_code" EntitySet="discount_code" />
+      <End Role="applied_to" EntitySet="applied_to" />
+    </AssociationSet>
+    <AssociationSet Name="fk_applied_to_locked_number" Association="Self.fk_applied_to_locked_number">
+      <End Role="locked_shopping_cart" EntitySet="locked_shopping_cart" />
+      <End Role="applied_to" EntitySet="applied_to" />
+    </AssociationSet>
+    <AssociationSet Name="fk_bank_transaction" Association="Self.fk_bank_transaction">
+      <End Role="transactions" EntitySet="transactions" />
+      <End Role="bank_transaction" EntitySet="bank_transaction" />
+    </AssociationSet>
+    <AssociationSet Name="fk_deposits_into_wallet_transaction" Association="Self.fk_deposits_into_wallet_transaction">
+      <End Role="bank_transaction" EntitySet="bank_transaction" />
+      <End Role="deposits_into_wallet" EntitySet="deposits_into_wallet" />
+    </AssociationSet>
+    <AssociationSet Name="fk_client_id" Association="Self.fk_client_id">
+      <End Role="client" EntitySet="clients" />
+      <End Role="shopping_cart" EntitySet="shopping_cart" />
+    </AssociationSet>
+    <AssociationSet Name="fk_deposits_into_wallet_client" Association="Self.fk_deposits_into_wallet_client">
+      <End Role="client" EntitySet="clients" />
+      <End Role="deposits_into_wallet" EntitySet="deposits_into_wallet" />
+    </AssociationSet>
+    <AssociationSet Name="fk_private_code_client" Association="Self.fk_private_code_client">
+      <End Role="client" EntitySet="clients" />
+      <End Role="private_code" EntitySet="private_code" />
+    </AssociationSet>
+    <AssociationSet Name="fk_refers_referee" Association="Self.fk_refers_referee">
+      <End Role="client" EntitySet="clients" />
+      <End Role="refers" EntitySet="refers" />
+    </AssociationSet>
+    <AssociationSet Name="fk_refers_referrer" Association="Self.fk_refers_referrer">
+      <End Role="client" EntitySet="clients" />
+      <End Role="refers" EntitySet="refers" />
+    </AssociationSet>
+    <AssociationSet Name="fk_vip" Association="Self.fk_vip">
+      <End Role="client" EntitySet="clients" />
+      <End Role="vip_client" EntitySet="vip_client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_COOLER_PRODUCT" Association="Self.FK_COOLER_PRODUCT">
+      <End Role="product" EntitySet="products" />
+      <End Role="cooler" EntitySet="coolers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CPU_PRODUCT" Association="Self.FK_CPU_PRODUCT">
+      <End Role="product" EntitySet="products" />
+      <End Role="cpu" EntitySet="cpus" />
+    </AssociationSet>
+    <AssociationSet Name="fk_private_code_discount_code" Association="Self.fk_private_code_discount_code">
+      <End Role="discount_code" EntitySet="discount_code" />
+      <End Role="private_code" EntitySet="private_code" />
+    </AssociationSet>
+    <AssociationSet Name="fk_public" Association="Self.fk_public">
+      <End Role="discount_code" EntitySet="discount_code" />
+      <End Role="public_code" EntitySet="public_code" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GPU_PRODUCT" Association="Self.FK_GPU_PRODUCT">
+      <End Role="product" EntitySet="products" />
+      <End Role="gpu" EntitySet="gpus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HDD_PRODUCT" Association="Self.FK_HDD_PRODUCT">
+      <End Role="product" EntitySet="products" />
+      <End Role="hdd" EntitySet="hdds" />
+    </AssociationSet>
+    <AssociationSet Name="fk_locked_shopping_cart" Association="Self.fk_locked_shopping_cart">
+      <End Role="shopping_cart" EntitySet="shopping_cart" />
+      <End Role="locked_shopping_cart" EntitySet="locked_shopping_cart" />
+    </AssociationSet>
+    <AssociationSet Name="fk_motherboard_id_sm" Association="Self.fk_motherboard_id_sm">
+      <End Role="motherboard" EntitySet="motherboards" />
+      <End Role="sm_slot_compatible_with" EntitySet="sm_slot_compatible_with" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MOTHERBOARD_PRODUCT" Association="Self.FK_MOTHERBOARD_PRODUCT">
+      <End Role="product" EntitySet="products" />
+      <End Role="motherboard" EntitySet="motherboards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CASE_PRODUCT" Association="Self.FK_CASE_PRODUCT">
+      <End Role="product" EntitySet="products" />
+      <End Role="p_case" EntitySet="p_case" />
+    </AssociationSet>
+    <AssociationSet Name="FK_POWER_SUPPLY_PRODUCT" Association="Self.FK_POWER_SUPPLY_PRODUCT">
+      <End Role="product" EntitySet="products" />
+      <End Role="power_supply" EntitySet="power_supply" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RAM_STICK_PRODUCT" Association="Self.FK_RAM_STICK_PRODUCT">
+      <End Role="product" EntitySet="products" />
+      <End Role="ram_stick" EntitySet="ram_stick" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SSD_PRODUCT" Association="Self.FK_SSD_PRODUCT">
+      <End Role="product" EntitySet="products" />
+      <End Role="SSD" EntitySet="SSDs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_wallet_transaction" Association="Self.fk_wallet_transaction">
+      <End Role="transactions" EntitySet="transactions" />
+      <End Role="wallet_transaction" EntitySet="wallet_transaction" />
+    </AssociationSet>
+    <AssociationSet Name="cc_socket_compatible_with" Association="Self.cc_socket_compatible_with">
+      <End Role="cooler" EntitySet="coolers" />
+      <End Role="cpu" EntitySet="cpus" />
+    </AssociationSet>
+    <AssociationSet Name="gm_slot_compatible_with" Association="Self.gm_slot_compatible_with">
+      <End Role="gpu" EntitySet="gpus" />
+      <End Role="motherboard" EntitySet="motherboards" />
+    </AssociationSet>
+    <AssociationSet Name="gp_connector_compatible_with" Association="Self.gp_connector_compatible_with">
+      <End Role="gpu" EntitySet="gpus" />
+      <End Role="power_supply" EntitySet="power_supply" />
+    </AssociationSet>
+    <AssociationSet Name="issued_for" Association="Self.issued_for">
+      <End Role="locked_shopping_cart" EntitySet="locked_shopping_cart" />
+      <End Role="transactions" EntitySet="transactions" />
+    </AssociationSet>
+    <AssociationSet Name="ms_socket_compatible_with" Association="Self.ms_socket_compatible_with">
+      <End Role="cpu" EntitySet="cpus" />
+      <End Role="motherboard" EntitySet="motherboards" />
+    </AssociationSet>
+    <AssociationSet Name="rm_slot_compatible_with" Association="Self.rm_slot_compatible_with">
+      <End Role="motherboard" EntitySet="motherboards" />
+      <End Role="ram_stick" EntitySet="ram_stick" />
+    </AssociationSet>
+    <AssociationSet Name="subscribes" Association="Self.subscribes">
+      <End Role="client" EntitySet="clients" />
+      <End Role="transactions" EntitySet="transactions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

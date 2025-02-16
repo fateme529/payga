@@ -1,0 +1,4 @@
+﻿Build started...
+1>------ Build started: Project: payga, Configuration: Debug Any CPU ------
+1>C:\Users\fdama\source\repos\payga\payga\Form1.cs(19,45,19,45): error CS1002: ; expected
+========== Build: 0 succeeded, 1 failed, 0 up-to-date, 0 skipped ==========
