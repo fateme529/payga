@@ -35,11 +35,12 @@ namespace payga
             {
                 MessageBox.Show("ورود موفقیت‌آمیز!", "موفقیت", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-          
+
+                MessageBox.Show("با موفقیت وارد شدید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 // Dashboard dashboard = new Dashboard();
                 // dashboard.Show();
 
-          
+
                 this.Hide();
             }
             else
