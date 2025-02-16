@@ -71,11 +71,13 @@ namespace payga
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Firebrick;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button2.Location = new System.Drawing.Point(763, 3);
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button2.Location = new System.Drawing.Point(754, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(34, 29);
+            this.button2.Size = new System.Drawing.Size(43, 29);
             this.button2.TabIndex = 2;
             this.button2.Text = "X";
             this.button2.UseVisualStyleBackColor = false;
