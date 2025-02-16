@@ -1,55 +1,65 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using BCrypt.Net;
 
 namespace payga
 {
-    public partial class FormMain : Form
+    public partial class Form1 : Form
     {
-        db_1Entities db = new db_1Entities();
-
-        public FormMain()
+        public Form1()
         {
             InitializeComponent();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            string username = txtuser.Text.Trim();
-            string password = txtpass.Text.Trim();
 
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
-            {
-                MessageBox.Show("لطفاً نام کاربری و رمز عبور را وارد کنید.", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+        }
 
-            // جستجوی کاربر در دیتابیس
-            var user = db.clients.FirstOrDefault(u => u.user_name == username);
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
-            if (user != null)
-            {
-                // بررسی صحت رمز عبور هش‌شده
-                if (BCrypt.Net.BCrypt.Verify(password, user.password))
-                {
-                    MessageBox.Show("ورود موفقیت‌آمیز!", "موفقیت", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
 
-                    // فرم اصلی برنامه را باز کن
-                    // Dashboard dashboard = new Dashboard();
-                    // dashboard.Show();
+        private void label1_Click(object sender, EventArgs e)
+        {
 
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("رمز عبور اشتباه است.", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("نام کاربری یافت نشد.", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

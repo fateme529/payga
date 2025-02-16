@@ -28,3 +28,4 @@ C:\Users\fdama\Desktop\payga\payga_cs\payga\bin\Debug\System.Runtime.CompilerSer
 C:\Users\fdama\Desktop\payga\payga_cs\payga\obj\Debug\payga.csproj.CopyComplete
 C:\Users\fdama\Desktop\payga\payga_cs\payga\obj\Debug\payga.exe
 C:\Users\fdama\Desktop\payga\payga_cs\payga\obj\Debug\payga.pdb
+C:\Users\fdama\Desktop\payga\payga_cs\payga\obj\Debug\payga.Form2.resources
