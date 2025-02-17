@@ -75,19 +75,40 @@ namespace WindowsFormsApp1
             tbl.phone_number = phone.Text;
             tbl.first_name = firstname.Text;
             tbl.last_name = lastname.Text;
-            int referalCode = 0;
+            /*int referalCode = null;
             try
             {
-                referalcode = Convert.ToInt32(referal.Text);
+              
+                
+                    referalcode = Convert.ToInt32(referal.Text);
+                
             }
             catch (FormatException)
             {
-                MessageBox.Show("Referral code must be a number.");
+              
+                
+                    MessageBox.Show("Referral code must be a number.");
+                
             }
             catch (OverflowException)
             {
                 MessageBox.Show("Referral code is too large.");
+            }*/
+
+            int? referalCode = null;
+
+            if (!string.IsNullOrWhiteSpace(referal.Text))
+            {
+                if (int.TryParse(referal.Text, out int parsedCode))  // بررسی و تبدیل با TryParse
+                {
+                    referalCode = parsedCode;
+                }
+                else
+                {
+                    MessageBox.Show("Referral code must be a number.");
+                }
             }
+
             tbl.referal_code = referalCode;
             tbl.user_name = username.Text;
             tbl.password = password.Text;
