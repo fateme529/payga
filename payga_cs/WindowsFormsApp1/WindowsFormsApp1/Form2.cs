@@ -72,7 +72,19 @@ namespace WindowsFormsApp1
         {
 
             client tbl = new client();
-            tbl.phone_number = phone.Text;
+
+            string phoneNumber = phone.Text;
+            if (!phoneNumber.StartsWith("+98"))
+            {
+                MessageBox.Show("Phone number must start with +98.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; 
+            }
+            if (phoneNumber.Length != 13 || !phoneNumber.Substring(3).All(char.IsDigit))
+            {
+                MessageBox.Show("Phone number must be followed by exactly 10 digits after +98.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; 
+            }
+            tbl.phone_number = phoneNumber;
             tbl.first_name = firstname.Text;
             tbl.last_name = lastname.Text;
     
