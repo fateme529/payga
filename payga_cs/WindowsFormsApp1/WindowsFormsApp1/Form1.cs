@@ -58,5 +58,20 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+         
+
+        private void register_password_CheckedChanged(object sender, EventArgs e)
+        {
+            loginpassword.PasswordChar = register_password.Checked ? '\0' : '*';
+
+        }
+
+
+
     }
 }

@@ -31,6 +31,7 @@ namespace WindowsFormsApp1
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.register_password = new System.Windows.Forms.CheckBox();
             this.logineuser = new System.Windows.Forms.TextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -50,6 +51,7 @@ namespace WindowsFormsApp1
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.register_password);
             this.panel1.Controls.Add(this.logineuser);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.pictureBox3);
@@ -60,18 +62,30 @@ namespace WindowsFormsApp1
             this.panel1.Controls.Add(this.loginebtn);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(106, 27);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(370, 321);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // register_password
+            // 
+            this.register_password.AutoSize = true;
+            this.register_password.Location = new System.Drawing.Point(87, 208);
+            this.register_password.Name = "register_password";
+            this.register_password.Size = new System.Drawing.Size(102, 17);
+            this.register_password.TabIndex = 11;
+            this.register_password.Text = "Show Password";
+            this.register_password.UseVisualStyleBackColor = true;
+            this.register_password.CheckedChanged += new System.EventHandler(this.register_password_CheckedChanged);
+            this.register_password.CheckStateChanged += new System.EventHandler(this.register_password_CheckedChanged);
             // 
             // logineuser
             // 
             this.logineuser.BackColor = System.Drawing.Color.MintCream;
             this.logineuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logineuser.Location = new System.Drawing.Point(126, 123);
-            this.logineuser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.logineuser.Margin = new System.Windows.Forms.Padding(2);
             this.logineuser.Name = "logineuser";
             this.logineuser.Size = new System.Drawing.Size(164, 26);
             this.logineuser.TabIndex = 10;
@@ -80,8 +94,8 @@ namespace WindowsFormsApp1
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(87, 163);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox4.Location = new System.Drawing.Point(87, 153);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(35, 39);
             this.pictureBox4.TabIndex = 9;
@@ -90,8 +104,8 @@ namespace WindowsFormsApp1
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(87, 123);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Location = new System.Drawing.Point(87, 113);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(35, 36);
             this.pictureBox3.TabIndex = 8;
@@ -101,7 +115,7 @@ namespace WindowsFormsApp1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(160, 6);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(75, 78);
             this.pictureBox1.TabIndex = 6;
@@ -135,7 +149,7 @@ namespace WindowsFormsApp1
             this.loginpassword.BackColor = System.Drawing.Color.MintCream;
             this.loginpassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginpassword.Location = new System.Drawing.Point(126, 163);
-            this.loginpassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loginpassword.Margin = new System.Windows.Forms.Padding(2);
             this.loginpassword.Name = "loginpassword";
             this.loginpassword.Size = new System.Drawing.Size(164, 26);
             this.loginpassword.TabIndex = 4;
@@ -147,8 +161,8 @@ namespace WindowsFormsApp1
             this.loginebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginebtn.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginebtn.ForeColor = System.Drawing.Color.Transparent;
-            this.loginebtn.Location = new System.Drawing.Point(87, 206);
-            this.loginebtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loginebtn.Location = new System.Drawing.Point(87, 230);
+            this.loginebtn.Margin = new System.Windows.Forms.Padding(2);
             this.loginebtn.Name = "loginebtn";
             this.loginebtn.Size = new System.Drawing.Size(202, 38);
             this.loginebtn.TabIndex = 1;
@@ -174,7 +188,7 @@ namespace WindowsFormsApp1
             this.button2.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button2.Location = new System.Drawing.Point(559, 10);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(32, 24);
             this.button2.TabIndex = 4;
@@ -190,7 +204,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -216,6 +230,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox logineuser;
+        private System.Windows.Forms.CheckBox register_password;
     }
 }
 
