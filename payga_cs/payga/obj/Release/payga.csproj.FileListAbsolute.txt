@@ -1,4 +1,0 @@
-C:\Users\fdama\source\repos\payga\payga\obj\Release\payga.FormMain.resources
-C:\Users\fdama\source\repos\payga\payga\obj\Release\payga.Properties.Resources.resources
-C:\Users\fdama\source\repos\payga\payga\obj\Release\payga.csproj.GenerateResource.cache
-C:\Users\fdama\source\repos\payga\payga\obj\Release\payga.csproj.CoreCompileInputs.cache
