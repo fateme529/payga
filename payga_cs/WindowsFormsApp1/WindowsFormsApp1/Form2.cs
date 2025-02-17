@@ -75,9 +75,10 @@ namespace WindowsFormsApp1
             tbl.phone_number = phone.Text;
             tbl.first_name = firstname.Text;
             tbl.last_name = lastname.Text;
+            int referalCode = 0;
             try
             {
-                tbl.referal_code = Convert.ToInt32(referal.Text);
+                referalcode = Convert.ToInt32(referal.Text);
             }
             catch (FormatException)
             {
@@ -87,7 +88,7 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Referral code is too large.");
             }
-
+            tbl.referal_code = referalCode;
             tbl.user_name = username.Text;
             tbl.password = password.Text;
             db.clients.Add(tbl);
