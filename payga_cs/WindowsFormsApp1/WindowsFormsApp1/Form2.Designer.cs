@@ -228,7 +228,7 @@ namespace WindowsFormsApp1
             // 
             this.lastname.BackColor = System.Drawing.Color.MintCream;
             this.lastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastname.ForeColor = System.Drawing.Color.Honeydew;
+            this.lastname.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lastname.Location = new System.Drawing.Point(127, 128);
             this.lastname.Name = "lastname";
             this.lastname.Size = new System.Drawing.Size(218, 30);
@@ -238,7 +238,7 @@ namespace WindowsFormsApp1
             // 
             this.firstname.BackColor = System.Drawing.Color.MintCream;
             this.firstname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstname.ForeColor = System.Drawing.Color.Honeydew;
+            this.firstname.ForeColor = System.Drawing.Color.Black;
             this.firstname.Location = new System.Drawing.Point(127, 92);
             this.firstname.Name = "firstname";
             this.firstname.Size = new System.Drawing.Size(218, 30);
@@ -311,12 +311,11 @@ namespace WindowsFormsApp1
             // 
             this.phone.BackColor = System.Drawing.Color.MintCream;
             this.phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phone.ForeColor = System.Drawing.Color.Honeydew;
+            this.phone.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.phone.Location = new System.Drawing.Point(127, 56);
             this.phone.Name = "phone";
             this.phone.Size = new System.Drawing.Size(218, 30);
             this.phone.TabIndex = 3;
-            this.phone.Text = "phone number";
             this.phone.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2

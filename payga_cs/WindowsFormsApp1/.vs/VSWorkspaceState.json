@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\packages",
+    "\\packages\\EntityFramework.6.2.0",
+    "\\packages\\EntityFramework.6.2.0\\Content",
+    "\\packages\\EntityFramework.6.2.0\\lib",
+    "\\packages\\EntityFramework.6.2.0\\tools",
+    "\\WindowsFormsApp1",
+    "\\WindowsFormsApp1\\bin",
+    "\\WindowsFormsApp1\\obj",
+    "\\WindowsFormsApp1\\Properties"
+  ],
+  "SelectedNode": "\\WindowsFormsApp1.sln",
+  "PreviewInSolutionExplorer": false
+}

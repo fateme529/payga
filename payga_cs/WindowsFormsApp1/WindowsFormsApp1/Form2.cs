@@ -82,6 +82,8 @@ namespace WindowsFormsApp1
             tbl.referal_code = referal.Text;
             tbl.user_name = username.Text;
             tbl.password = password.Text;
+            db.client.add(tbl);
+            db.SaveChanges();
 
 
         }
