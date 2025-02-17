@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-
+        db_1Entities db = new db_1Entities();
         private void sign_Click(object sender, EventArgs e)
         {
             Form1 loginform = new Form1();
@@ -71,6 +71,18 @@ namespace WindowsFormsApp1
 
         private void loginebtn_Click(object sender, EventArgs e)
         {
+
+        }
+        private void signup_Click(object sender, EventArgs e)
+        {
+            client tbl = new client();
+            tbl.phone_number = phone.Text;
+            tbl.first_name = firstname.Text;
+            tbl.last_name = lastname.Text;
+            tbl.referal_code = referal.Text;
+            tbl.user_name = username.Text;
+            tbl.password = password.Text;
+
 
         }
     }
