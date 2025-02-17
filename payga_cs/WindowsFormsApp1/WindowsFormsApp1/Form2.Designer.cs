@@ -70,6 +70,7 @@ namespace WindowsFormsApp1
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
@@ -78,7 +79,6 @@ namespace WindowsFormsApp1
             this.panel1.Controls.Add(this.pictureBox6);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.pictureBox5);
-            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.password);
             this.panel1.Controls.Add(this.username);
             this.panel1.Controls.Add(this.lastname);
@@ -92,7 +92,7 @@ namespace WindowsFormsApp1
             this.panel1.Controls.Add(this.phone);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(103, 23);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(370, 321);
             this.panel1.TabIndex = 4;
@@ -170,30 +170,30 @@ namespace WindowsFormsApp1
             // pictureBox7
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(60, 46);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox7.Location = new System.Drawing.Point(60, 37);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(22, 24);
+            this.pictureBox7.Size = new System.Drawing.Size(31, 35);
             this.pictureBox7.TabIndex = 17;
             this.pictureBox7.TabStop = false;
             // 
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(60, 75);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox6.Location = new System.Drawing.Point(60, 73);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(22, 24);
+            this.pictureBox6.Size = new System.Drawing.Size(31, 28);
             this.pictureBox6.TabIndex = 16;
             this.pictureBox6.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(274, 75);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(263, 75);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(73, 75);
+            this.pictureBox1.Size = new System.Drawing.Size(96, 101);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -201,20 +201,20 @@ namespace WindowsFormsApp1
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(60, 104);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox5.Location = new System.Drawing.Point(60, 103);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(22, 24);
+            this.pictureBox5.Size = new System.Drawing.Size(31, 26);
             this.pictureBox5.TabIndex = 15;
             this.pictureBox5.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(60, 133);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Location = new System.Drawing.Point(60, 126);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(22, 24);
+            this.pictureBox2.Size = new System.Drawing.Size(31, 33);
             this.pictureBox2.TabIndex = 14;
             this.pictureBox2.TabStop = false;
             // 
@@ -223,7 +223,7 @@ namespace WindowsFormsApp1
             this.password.BackColor = System.Drawing.Color.MintCream;
             this.password.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password.Location = new System.Drawing.Point(95, 192);
-            this.password.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.password.Margin = new System.Windows.Forms.Padding(2);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(164, 26);
             this.password.TabIndex = 13;
@@ -233,7 +233,7 @@ namespace WindowsFormsApp1
             this.username.BackColor = System.Drawing.Color.MintCream;
             this.username.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.username.Location = new System.Drawing.Point(95, 162);
-            this.username.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.username.Margin = new System.Windows.Forms.Padding(2);
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(164, 26);
             this.username.TabIndex = 12;
@@ -244,7 +244,7 @@ namespace WindowsFormsApp1
             this.lastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lastname.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lastname.Location = new System.Drawing.Point(95, 104);
-            this.lastname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lastname.Margin = new System.Windows.Forms.Padding(2);
             this.lastname.Name = "lastname";
             this.lastname.Size = new System.Drawing.Size(164, 26);
             this.lastname.TabIndex = 11;
@@ -255,7 +255,7 @@ namespace WindowsFormsApp1
             this.firstname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.firstname.ForeColor = System.Drawing.Color.Black;
             this.firstname.Location = new System.Drawing.Point(95, 75);
-            this.firstname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.firstname.Margin = new System.Windows.Forms.Padding(2);
             this.firstname.Name = "firstname";
             this.firstname.Size = new System.Drawing.Size(164, 26);
             this.firstname.TabIndex = 10;
@@ -263,20 +263,20 @@ namespace WindowsFormsApp1
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(60, 192);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox4.Location = new System.Drawing.Point(60, 199);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(22, 24);
+            this.pictureBox4.Size = new System.Drawing.Size(31, 33);
             this.pictureBox4.TabIndex = 9;
             this.pictureBox4.TabStop = false;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(60, 162);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Location = new System.Drawing.Point(60, 161);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(22, 24);
+            this.pictureBox3.Size = new System.Drawing.Size(31, 33);
             this.pictureBox3.TabIndex = 8;
             this.pictureBox3.TabStop = false;
             // 
@@ -309,7 +309,7 @@ namespace WindowsFormsApp1
             this.referal.BackColor = System.Drawing.Color.MintCream;
             this.referal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.referal.Location = new System.Drawing.Point(95, 133);
-            this.referal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.referal.Margin = new System.Windows.Forms.Padding(2);
             this.referal.Name = "referal";
             this.referal.Size = new System.Drawing.Size(164, 26);
             this.referal.TabIndex = 4;
@@ -321,7 +321,7 @@ namespace WindowsFormsApp1
             this.loginebtn.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginebtn.ForeColor = System.Drawing.Color.Transparent;
             this.loginebtn.Location = new System.Drawing.Point(88, 247);
-            this.loginebtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loginebtn.Margin = new System.Windows.Forms.Padding(2);
             this.loginebtn.Name = "loginebtn";
             this.loginebtn.Size = new System.Drawing.Size(202, 38);
             this.loginebtn.TabIndex = 1;
@@ -335,7 +335,7 @@ namespace WindowsFormsApp1
             this.phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phone.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.phone.Location = new System.Drawing.Point(95, 46);
-            this.phone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.phone.Margin = new System.Windows.Forms.Padding(2);
             this.phone.Name = "phone";
             this.phone.Size = new System.Drawing.Size(164, 26);
             this.phone.TabIndex = 3;
@@ -361,7 +361,7 @@ namespace WindowsFormsApp1
             this.button2.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button2.Location = new System.Drawing.Point(566, 2);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(32, 24);
             this.button2.TabIndex = 10;
@@ -379,7 +379,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form2";
             this.Text = "Form2";
             this.panel1.ResumeLayout(false);
