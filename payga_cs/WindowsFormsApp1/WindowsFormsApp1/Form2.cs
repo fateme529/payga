@@ -68,6 +68,13 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void register_password2_CheckedChanged(object sender, EventArgs e)
+        {
+            password.PasswordChar = register_password2.Checked ? '\0' : '*';
+
+        }
+
         private void signup_Click(object sender, EventArgs e)
         {
 
@@ -119,6 +126,11 @@ namespace WindowsFormsApp1
 
          
 
+
+        }
+
+        private void register_password2_CheckStateChanged(object sender, EventArgs e)
+        {
 
         }
     }
