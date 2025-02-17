@@ -68,22 +68,31 @@ namespace WindowsFormsApp1
         {
 
         }
-
-        private void loginebtn_Click(object sender, EventArgs e)
-        {
-
-        }
         private void signup_Click(object sender, EventArgs e)
         {
+
             client tbl = new client();
             tbl.phone_number = phone.Text;
             tbl.first_name = firstname.Text;
             tbl.last_name = lastname.Text;
-            tbl.referal_code = referal.Text;
+            try
+            {
+                tbl.referal_code = Convert.ToInt32(referal.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Referral code must be a number.");
+            }
+            catch (OverflowException)
+            {
+                MessageBox.Show("Referral code is too large.");
+            }
+
             tbl.user_name = username.Text;
             tbl.password = password.Text;
-            db.client.add(tbl);
+            db.clients.Add(tbl);
             db.SaveChanges();
+            MessageBox.Show("Information has been successfully registered"); 
 
 
         }
