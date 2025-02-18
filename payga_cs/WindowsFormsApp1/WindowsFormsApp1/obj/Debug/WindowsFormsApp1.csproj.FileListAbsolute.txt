@@ -29,3 +29,5 @@ C:\Users\fdama\Desktop\payga\payga_cs\WindowsFormsApp1\WindowsFormsApp1\bin\Debu
 C:\Users\fdama\Desktop\payga\payga_cs\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
 C:\Users\fdama\Desktop\payga\payga_cs\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\fdama\Desktop\payga\payga_cs\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\fdama\Desktop\payga\payga_cs\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+C:\Users\fdama\Desktop\payga\payga_cs\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form3.resources
