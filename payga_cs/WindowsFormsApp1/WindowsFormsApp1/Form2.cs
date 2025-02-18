@@ -69,11 +69,7 @@ namespace WindowsFormsApp1
 
         }
 
-        private void register_password2_CheckedChanged(object sender, EventArgs e)
-        {
-            password.PasswordChar = register_password2.Checked ? '\0' : '*';
 
-        }
 
         private void signup_Click(object sender, EventArgs e)
         {
@@ -105,21 +101,17 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
+                    MessageBox.Show("Referral code does not refer to an existing user.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
                     MessageBox.Show("Referral code must be a number.");
                     return;
                 }
             }
 
             tbl.referal_code = referalCode;
-            tbl.user_name = username.Text;
-            tbl.password = password.Text;
-            if (password.Text.Length < 8)
-            {
-                MessageBox.Show("Invalid password, at least 8 characters are needed"
-                    , "Error message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-
-            }
             db.clients.Add(tbl);
             db.SaveChanges();
             MessageBox.Show("Information has been successfully registered"); 
@@ -129,7 +121,9 @@ namespace WindowsFormsApp1
 
         }
 
-        private void register_password2_CheckStateChanged(object sender, EventArgs e)
+  
+
+        private void pictureBox3_Click(object sender, EventArgs e)
         {
 
         }

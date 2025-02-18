@@ -32,8 +32,6 @@ namespace WindowsFormsApp1
         public Nullable<decimal> wallet_balance { get; set; }
         public Nullable<System.DateTime> timestamp { get; set; }
         public Nullable<int> referal_code { get; set; }
-        public string user_name { get; set; }
-        public string password { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<address> addresses { get; set; }

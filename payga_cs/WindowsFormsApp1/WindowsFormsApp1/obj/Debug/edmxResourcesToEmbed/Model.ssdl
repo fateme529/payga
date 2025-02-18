@@ -63,8 +63,6 @@
     <Property Name="wallet_balance" Type="decimal" Precision="18" Scale="2" />
     <Property Name="timestamp" Type="datetime" />
     <Property Name="referal_code" Type="int" />
-    <Property Name="user_name" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="password" Type="nvarchar" MaxLength="255" Nullable="false" />
   </EntityType>
   <EntityType Name="cooler">
     <Key>

@@ -4,15 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ac9c4702a4aa463d93c4161a7ed00c64" Name="Diagram1">
+      <Diagram DiagramId="397dd3c374154a15b85476043eafcba0" Name="Diagram1" ZoomLevel="74">
         <EntityTypeShape EntityType="db_1Model.added_to" Width="1.5" PointX="6" PointY="16.5" IsExpanded="true" />
         <EntityTypeShape EntityType="db_1Model.address" Width="1.5" PointX="3.75" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="db_1Model.applied_to" Width="1.5" PointX="6" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_1Model.bank_transaction" Width="1.5" PointX="8.25" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_1Model.client" Width="1.5" PointX="1.5" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_1Model.bank_transaction" Width="1.5" PointX="8.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_1Model.client" Width="1.5" PointX="1.5" PointY="2.75" IsExpanded="true" />
         <EntityTypeShape EntityType="db_1Model.cooler" Width="1.5" PointX="3" PointY="12.75" IsExpanded="true" />
         <EntityTypeShape EntityType="db_1Model.cpu" Width="1.5" PointX="5.25" PointY="11.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_1Model.deposits_into_wallet" Width="1.5" PointX="10.5" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_1Model.deposits_into_wallet" Width="1.5" PointX="10.5" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="db_1Model.discount_code" Width="1.5" PointX="1.5" PointY="30.5" IsExpanded="true" />
         <EntityTypeShape EntityType="db_1Model.gpu" Width="1.5" PointX="3" PointY="16.5" IsExpanded="true" />
         <EntityTypeShape EntityType="db_1Model.hdd" Width="1.5" PointX="3" PointY="20.375" IsExpanded="true" />
@@ -28,10 +28,10 @@
         <EntityTypeShape EntityType="db_1Model.shopping_cart" Width="1.5" PointX="1.5" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="db_1Model.sm_slot_compatible_with" Width="1.5" PointX="9.75" PointY="13.625" IsExpanded="true" />
         <EntityTypeShape EntityType="db_1Model.SSD" Width="1.5" PointX="3" PointY="27.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_1Model.transaction" Width="1.5" PointX="6" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_1Model.transaction" Width="1.5" PointX="6" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="db_1Model.vip_client" Width="1.5" PointX="3.75" PointY="33.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_1Model.wallet_transaction" Width="1.5" PointX="8.25" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_1Model.Cart_Total_Discount" Width="1.5" PointX="9.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_1Model.wallet_transaction" Width="1.5" PointX="8.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_1Model.Cart_Total_Discount" Width="1.5" PointX="10.75" PointY="8.5" IsExpanded="true" />
         <AssociationConnector Association="db_1Model.fk_added_to_locked" ManuallyRouted="false" />
         <AssociationConnector Association="db_1Model.fk_added_to_product" ManuallyRouted="false" />
         <AssociationConnector Association="db_1Model.fk_address" ManuallyRouted="false" />

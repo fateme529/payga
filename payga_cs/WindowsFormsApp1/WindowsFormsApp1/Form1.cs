@@ -50,70 +50,42 @@ namespace WindowsFormsApp1
 
         }
 
-        private void loginpassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void logineuser_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
         private void loginebtn_CheckedChanged(object sender, EventArgs e)
         {
-            if(logineuser.Text == "" || loginpassword.Text == "")
+           /* if(logineuser.Text == "" )
             {
-                MessageBox.Show("pleas fill");
+                MessageBox.Show("pleas enter your phone number");
             }
             string username = logineuser.Text.Trim();
-            string password = loginpassword.Text;
+
 
       
             var user = db.clients.FirstOrDefault(u => u.user_name == username);
 
             if (user == null)
             {
-                MessageBox.Show("Username not found.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("phone number not found.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-           
-            if (user.password != password)
-            {
-                MessageBox.Show("Incorrect password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-      
-            if (username.ToLower() == "admin")
-            {
-                MessageBox.Show("Welcome Admin!", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Form3 adminForm = new Form3();
-                this.Hide();
-                adminForm.ShowDialog();
-                this.Show();
-            }
-            else
-            {
-                /*MessageBox.Show("Welcome User!", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                UserForm userForm = new UserForm();
+                         
+                MessageBox.Show("Welcome!", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Form3 userForm = new Form3();
                 this.Hide();
                 userForm.ShowDialog();
-                this.Show();*/
-            }
-        }
-
-
-        private void register_password_CheckedChanged(object sender, EventArgs e)
-        {
-            loginpassword.PasswordChar = register_password.Checked ? '\0' : '*';
+                this.Show();
+            */
 
         }
+
+
+
 
 
 

@@ -62,8 +62,6 @@
     <Property Name="wallet_balance" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="timestamp" Type="DateTime" Precision="3" />
     <Property Name="referal_code" Type="Int32" />
-    <Property Name="user_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="addresses" Relationship="Self.fk_address" FromRole="client" ToRole="address" />
     <NavigationProperty Name="shopping_cart" Relationship="Self.fk_client_id" FromRole="client" ToRole="shopping_cart" />
     <NavigationProperty Name="deposits_into_wallet" Relationship="Self.fk_deposits_into_wallet_client" FromRole="client" ToRole="deposits_into_wallet" />

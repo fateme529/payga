@@ -68,8 +68,6 @@
           <Property Name="wallet_balance" Type="decimal" Precision="18" Scale="2" />
           <Property Name="timestamp" Type="datetime" />
           <Property Name="referal_code" Type="int" />
-          <Property Name="user_name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="password" Type="nvarchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="cooler">
           <Key>
@@ -1192,8 +1190,6 @@ warning 6002: The table/view 'payga.dbo.Cart_Total_Discount' does not have a pri
           <Property Name="wallet_balance" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="timestamp" Type="DateTime" Precision="3" />
           <Property Name="referal_code" Type="Int32" />
-          <Property Name="user_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="addresses" Relationship="Self.fk_address" FromRole="client" ToRole="address" />
           <NavigationProperty Name="shopping_cart" Relationship="Self.fk_client_id" FromRole="client" ToRole="shopping_cart" />
           <NavigationProperty Name="deposits_into_wallet" Relationship="Self.fk_deposits_into_wallet_client" FromRole="client" ToRole="deposits_into_wallet" />
@@ -2112,8 +2108,6 @@ warning 6002: The table/view 'payga.dbo.Cart_Total_Discount' does not have a pri
                 <ScalarProperty Name="wallet_balance" ColumnName="wallet_balance" />
                 <ScalarProperty Name="timestamp" ColumnName="timestamp" />
                 <ScalarProperty Name="referal_code" ColumnName="referal_code" />
-                <ScalarProperty Name="user_name" ColumnName="user_name" />
-                <ScalarProperty Name="password" ColumnName="password" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
