@@ -24,7 +24,10 @@ namespace WindowsFormsApp1
 
         private void DisplayWelcomeMessage(string firstName)
         {
-            labelWelcomeMessage.Text = $"Welcome, {firstName}! This is your account page.";
+        
+            labelWelcomeMessage.Font = new Font("Arial", 11);
+
+            labelWelcomeMessage.Text = $"Welcome, {firstName}! Manage your details and enjoy personalized offers just for you.";
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -33,6 +36,15 @@ namespace WindowsFormsApp1
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
