@@ -40,8 +40,12 @@ namespace WindowsFormsApp1
 
         }
         private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
+        {  if(MessageBox.Show("Are you sure you want to close?","Confirmation Message"
+            ,MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+           
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -61,6 +65,21 @@ namespace WindowsFormsApp1
 
         private void button6_Click(object sender, EventArgs e)
         {
+
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+   
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to close?", "Confirmation Message"
+               , MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+            
+                this.Hide();
+            }
 
         }
     }
