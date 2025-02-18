@@ -63,7 +63,14 @@ namespace WindowsFormsApp1
         {
 
         }
-         
+        private void loginebtn_CheckedChanged(object sender, EventArgs e)
+        {
+            if(logineuser.Text == "" || loginpassword.Text == "")
+            {
+                MessageBox.Show("pleas fill");
+            }
+        }
+
 
         private void register_password_CheckedChanged(object sender, EventArgs e)
         {
