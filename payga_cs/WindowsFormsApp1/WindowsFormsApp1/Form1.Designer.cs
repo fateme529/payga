@@ -70,7 +70,6 @@ namespace WindowsFormsApp1
             this.logineuser.Name = "logineuser";
             this.logineuser.Size = new System.Drawing.Size(217, 30);
             this.logineuser.TabIndex = 10;
-            this.logineuser.TextChanged += new System.EventHandler(this.logineuser_TextChanged);
             // 
             // pictureBox3
             // 
@@ -126,7 +125,7 @@ namespace WindowsFormsApp1
             this.loginebtn.TabIndex = 1;
             this.loginebtn.Text = "Logine";
             this.loginebtn.UseVisualStyleBackColor = false;
-            this.loginebtn.Click += new System.EventHandler(this.loginebtn_CheckedChanged);
+            this.loginebtn.Click += new System.EventHandler(this.loginebtn_Click);
             // 
             // label2
             // 

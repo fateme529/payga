@@ -58,7 +58,7 @@ namespace WindowsFormsApp1
 
         private void loginebtn_CheckedChanged(object sender, EventArgs e)
         {
-           /* if(logineuser.Text == "" )
+          /* if(logineuser.Text == "" )
             {
                 MessageBox.Show("pleas enter your phone number");
             }
@@ -84,6 +84,33 @@ namespace WindowsFormsApp1
 
         }
 
+        private void loginebtn_Click(object sender, EventArgs e)
+        {
+            if (logineuser.Text == "")
+            {
+                MessageBox.Show("pleas enter your phone number");
+            }
+             string username = logineuser.Text.Trim();
+
+
+
+             var user = db.clients.FirstOrDefault(u => u.phone_number == username);
+
+             if (user == null)
+             {
+                 MessageBox.Show("phone number not found.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 return;
+             }
+
+
+                 MessageBox.Show("Welcome!", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                 Form3 userForm = new Form3();
+                 this.Hide();
+                 userForm.ShowDialog();
+                 this.Show();
+             
+
+        }
 
 
 

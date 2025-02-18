@@ -80,33 +80,37 @@ namespace WindowsFormsApp1
             if (!phoneNumber.StartsWith("+98"))
             {
                 MessageBox.Show("Phone number must start with +98.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; 
+                return;
             }
             if (phoneNumber.Length != 13 || !phoneNumber.Substring(3).All(char.IsDigit))
             {
                 MessageBox.Show("Phone number must be followed by exactly 10 digits after +98.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; 
+                return;
             }
+
             tbl.phone_number = phoneNumber;
             tbl.first_name = firstname.Text;
             tbl.last_name = lastname.Text;
-    
+
             int? referalCode = null;
 
             if (!string.IsNullOrWhiteSpace(referal.Text))
             {
-                if (int.TryParse(referal.Text, out int parsedCode))  
+                if (int.TryParse(referal.Text, out int parsedCode))
                 {
                     referalCode = parsedCode;
+
+                
+                    var referalUser = db.clients.FirstOrDefault(u => u.id == referalCode);
+                    if (referalUser == null)
+                    {
+                        MessageBox.Show("Referral code does not refer to an existing user.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Referral code does not refer to an existing user.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                else
-                {
-                    MessageBox.Show("Referral code must be a number.");
+                    MessageBox.Show("Referral code must be a number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
@@ -114,14 +118,13 @@ namespace WindowsFormsApp1
             tbl.referal_code = referalCode;
             db.clients.Add(tbl);
             db.SaveChanges();
-            MessageBox.Show("Information has been successfully registered"); 
+            MessageBox.Show("Information has been successfully registered");
 
-         
 
 
         }
 
-  
+
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
