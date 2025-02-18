@@ -12,23 +12,19 @@ namespace WindowsFormsApp1
 {
     public partial class Form3 : Form
     {
-        private readonly db_1Entities _dbContext;
-        private readonly string _phoneNumber;
-        public Form3(string first_name,string phone_number)
+        //private readonly db_1Entities _dbContext;
+        //private readonly string _phoneNumber;
+        public Form3(string frist_name)
         {
             InitializeComponent();
-            _dbContext = new db_1Entities();
-            DisplayWelcomeMessage(first_name);
-            _phoneNumber = phone_number;
-            LoadUserControl();
         }
-        db_1Entities db = new db_1Entities();
+       // db_1Entities db = new db_1Entities();
       
 
         private void DisplayWelcomeMessage(string firstName)
         {
         
-            labelWelcomeMessage.Font = new Font("Arial", 11);
+           labelWelcomeMessage.Font = new Font("Arial", 11);
 
             labelWelcomeMessage.Text = $"Welcome, {firstName}! Manage your details and enjoy personalized offers just for you.";
         }
@@ -62,23 +58,7 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (panelUserInfo == null)
-            {
-                MessageBox.Show("panelUserInfo is not initialized.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
 
-            UserControl1 userControl = new UserControl1(_phoneNumber);
-
-            if (userControl == null)
-            {
-                MessageBox.Show("Failed to create UserControl1.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            panelUserInfo.Controls.Clear();
-            panelUserInfo.Controls.Add(userControl);
-            userControl.Dock = DockStyle.Fill;
 
         }
 

@@ -39,7 +39,7 @@ namespace WindowsFormsApp1
             this.loginebtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.userControl11 = new WindowsFormsApp1.UserControl1();
+            //this.userControl11 = new WindowsFormsApp1.UserControl1();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -158,10 +158,10 @@ namespace WindowsFormsApp1
             // 
             // userControl11
             // 
-            this.userControl11.Location = new System.Drawing.Point(507, 126);
-            this.userControl11.Name = "userControl11";
-            this.userControl11.Size = new System.Drawing.Size(817, 576);
-            this.userControl11.TabIndex = 5;
+            //this.userControl11.Location = new System.Drawing.Point(507, 126);
+            //this.userControl11.Name = "userControl11";
+            //this.userControl11.Size = new System.Drawing.Size(817, 576);
+            //this.userControl11.TabIndex = 5;
             // 
             // Form1
             // 
@@ -169,7 +169,7 @@ namespace WindowsFormsApp1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(113)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(600, 366);
-            this.Controls.Add(this.userControl11);
+            //this.Controls.Add(this.userControl11);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -196,7 +196,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox logineuser;
-        private UserControl1 userControl11;
+        //private UserControl1 userControl11;
     }
 }
 
