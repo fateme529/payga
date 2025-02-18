@@ -103,10 +103,10 @@ namespace WindowsFormsApp1
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(90, 19);
+            this.pictureBox1.Location = new System.Drawing.Point(81, 28);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 96);
+            this.pictureBox1.Size = new System.Drawing.Size(121, 125);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
