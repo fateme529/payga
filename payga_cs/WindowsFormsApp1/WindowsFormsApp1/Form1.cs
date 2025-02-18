@@ -104,7 +104,7 @@ namespace WindowsFormsApp1
 
 
                  MessageBox.Show("Welcome!", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Form3 userForm = new Form3(user.first_name);
+            Form3 userForm = new Form3(user.id,user.first_name);
             this.Hide();
             userForm.ShowDialog();
             this.Show();

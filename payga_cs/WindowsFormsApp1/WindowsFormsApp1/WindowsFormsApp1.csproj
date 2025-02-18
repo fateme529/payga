@@ -109,6 +109,12 @@
     <Compile Include="hdd.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="info.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="info.Designer.cs">
+      <DependentUpon>info.cs</DependentUpon>
+    </Compile>
     <Compile Include="locked_shopping_cart.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -185,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="info.resx">
+      <DependentUpon>info.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
