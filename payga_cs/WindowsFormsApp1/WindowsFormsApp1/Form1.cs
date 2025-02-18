@@ -18,6 +18,7 @@ namespace WindowsFormsApp1
             this.button2.Click += new System.EventHandler(this.button2_Click);
 
         }
+        db_1Entities db = new db_1Entities();
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close(); 
@@ -68,6 +69,42 @@ namespace WindowsFormsApp1
             if(logineuser.Text == "" || loginpassword.Text == "")
             {
                 MessageBox.Show("pleas fill");
+            }
+            string username = logineuser.Text.Trim();
+            string password = loginpassword.Text;
+
+      
+            var user = db.clients.FirstOrDefault(u => u.user_name == username);
+
+            if (user == null)
+            {
+                MessageBox.Show("Username not found.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+           
+            if (user.password != password)
+            {
+                MessageBox.Show("Incorrect password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+      
+            if (username.ToLower() == "admin")
+            {
+                MessageBox.Show("Welcome Admin!", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Form3 adminForm = new Form3();
+                this.Hide();
+                adminForm.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                /*MessageBox.Show("Welcome User!", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                UserForm userForm = new UserForm();
+                this.Hide();
+                userForm.ShowDialog();
+                this.Show();*/
             }
         }
 
