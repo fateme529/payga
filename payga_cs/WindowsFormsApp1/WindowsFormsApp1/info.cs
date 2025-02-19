@@ -48,15 +48,27 @@ namespace WindowsFormsApp1
                     {
                         label18.Text="There is no address";
                     }
-                }
+
+                    
+                    var isVip = db.vip_client.Any(v => v.id == userid);
+                    if (isVip)
+                    {
+                       
+                        label19.Text = "VIP";
+
+                    }
+                    else
+                    {
+
+                        label19.Text = "NORMAL";
+                    }
+                    }
                 else
                 {
                     return; 
                 }
 
-                //label9.Text = $" {user.first_name}";
-                    // labelPhone.Text = $"Phone: {user.phone}";
-                    // labelEmail.Text = $"Email: {user.email}";
+               
                 
          
             }
@@ -73,6 +85,11 @@ namespace WindowsFormsApp1
         }
 
         private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click_1(object sender, EventArgs e)
         {
 
         }
