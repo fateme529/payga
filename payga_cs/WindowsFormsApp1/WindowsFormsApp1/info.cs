@@ -30,6 +30,15 @@ namespace WindowsFormsApp1
                     label13.Text = $"{user.wallet_balance}";
                     label14.Text = $"{user.timestamp}";
                     label15.Text = $"{user.id}";
+                    string dis = $"id_discount_{userid}_";
+                    var referalcount = db.discount_code.Count(dc => dc.amount == 25 && dc.dis_code.StartsWith(dis));
+
+                    label17.Text = $" {referalcount}";  
+
+
+                   
+                    var discountCount = db.private_code.Count(pc => pc.id == userid);
+                    label16.Text = $" {discountCount}"; 
                 }
                 else
                 {
