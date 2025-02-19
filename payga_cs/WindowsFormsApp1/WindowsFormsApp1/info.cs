@@ -34,11 +34,20 @@ namespace WindowsFormsApp1
                     var referalcount = db.discount_code.Count(dc => dc.amount == 25 && dc.dis_code.StartsWith(dis));
 
                     label17.Text = $" {referalcount}";  
-
-
                    
                     var discountCount = db.private_code.Count(pc => pc.id == userid);
-                    label16.Text = $" {discountCount}"; 
+                    label16.Text = $" {discountCount}";
+                    label18.AutoSize = true;
+                    var addresses = db.addresses .Where(ad => ad.id == userid) .ToList();
+                    if (addresses.Any())
+                    {
+                        
+                        label18.Text = string.Join("\n", addresses.Select(ad => $"{ad.province}\n {ad.remainder}"));
+                    }
+                    else
+                    {
+                        label18.Text="There is no address";
+                    }
                 }
                 else
                 {
@@ -59,6 +68,11 @@ namespace WindowsFormsApp1
         }
 
         private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
         {
 
         }
