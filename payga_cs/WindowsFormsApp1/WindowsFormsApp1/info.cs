@@ -28,6 +28,8 @@ namespace WindowsFormsApp1
                    
                    label11.Text = $"{user.first_name} {user.last_name}";
                     label13.Text = $"{user.wallet_balance}";
+                    label14.Text = $"{user.timestamp}";
+                    label15.Text = $"{user.id}";
                 }
                 else
                 {
