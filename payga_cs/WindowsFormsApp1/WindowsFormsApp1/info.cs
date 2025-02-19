@@ -26,7 +26,8 @@ namespace WindowsFormsApp1
                 if (user != null)
                 {
                    
-                   label10.Text = $"name {user.first_name}";
+                   label11.Text = $"{user.first_name} {user.last_name}";
+                    label13.Text = $"{user.wallet_balance}";
                 }
                 else
                 {
@@ -42,6 +43,11 @@ namespace WindowsFormsApp1
         }
 
         private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
         {
 
         }

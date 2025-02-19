@@ -107,7 +107,7 @@ namespace WindowsFormsApp1
             Form3 userForm = new Form3(user.id,user.first_name);
             this.Hide();
             userForm.ShowDialog();
-            this.Show();
+            //this.Show();
 
 
         }
