@@ -61,25 +61,7 @@ namespace WindowsFormsApp1
                                     break;
                             }
                         }
-                        else
-                        {
-                            // اگر کاربر وی آی پی نباشد
-                            switch (i)
-                            {
-                                case 2:
-                                    label3.Text = "این سبد فقط برای کاربران وی آی پی است";
-                                    break;
-                                case 3:
-                                    label4.Text = "این سبد فقط برای کاربران وی آی پی است";
-                                    break;
-                                case 4:
-                                    label5.Text = "این سبد فقط برای کاربران وی آی پی است";
-                                    break;
-                                case 5:
-                                    label6.Text = "این سبد فقط برای کاربران وی آی پی است";
-                                    break;
-                            }
-                        }
+                        
                     }
                     else
                     {
@@ -87,16 +69,16 @@ namespace WindowsFormsApp1
                         switch (i)
                         {
                             case 2:
-                                label3.Text = "سبد خرید موجود نیست";
+                                label3.Text = "This cart is only for VIP users";
                                 break;
                             case 3:
-                                label4.Text = "سبد خرید موجود نیست";
+                                label4.Text = "This cart is only for VIP users";
                                 break;
                             case 4:
-                                label5.Text = "سبد خرید موجود نیست";
+                                label5.Text = "This cart is only for VIP users";
                                 break;
                             case 5:
-                                label6.Text = "سبد خرید موجود نیست";
+                                label6.Text = "This cart is only for VIP users";
                                 break;
                         }
                     }
