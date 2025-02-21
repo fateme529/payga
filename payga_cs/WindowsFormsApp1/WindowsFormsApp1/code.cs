@@ -48,14 +48,14 @@ namespace WindowsFormsApp1
                   
                         if (validDiscountCodes.Any())
                         {
-                            label3.Text = string.Join(Environment.NewLine, validDiscountCodes);
+                            label4.Text = string.Join(Environment.NewLine, validDiscountCodes);
                            // label3.AutoSize = true;
                            // label3.MaximumSize = new Size(300, 0);
                            // label3.TextAlign = ContentAlignment.MiddleLeft;
                         }
                         else
                         {
-                            label3.Text = "No valid discount codes found!";
+                            label4.Text = "No valid discount codes found!";
                         }
 
                     }
@@ -81,6 +81,11 @@ namespace WindowsFormsApp1
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }
