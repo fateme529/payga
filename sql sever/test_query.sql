@@ -31,6 +31,8 @@ select*from issued_for
 select* from wallet_transaction
 select* from bank_transaction
 select* from deposits_into_wallet
+select* from vw_TransactionDetails
+select* from vw_CartTotalAfterIssuedFor
 
 
 
@@ -55,7 +57,7 @@ VALUES (
 );
 
 INSERT INTO added_to(client_id,cart_number,locked_number,product_id,quantity)
-values(53,5301,56,31,5)
+values(101,10103,57,29,1)
 
 INSERT INTO applied_to(client_id,cart_number,locked_number,app_code)
 VALUES(44,4402,42,'id_discount_44_7828F2CB')
@@ -82,7 +84,7 @@ VALUES(900889088,'hale','samavat',44)
 
 
 INSERT INTO issued_for(tracking_code,id_client,cart_number,locked_number)
-VALUES(44,53,5301,56)
+VALUES(46,101,10103,57)
 
 
 INSERT INTO transactions(status)
