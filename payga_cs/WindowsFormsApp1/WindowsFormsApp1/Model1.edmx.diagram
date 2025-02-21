@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0100733da96b4795ba763458ad93fed3" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="Model1.added_to" Width="1.5" PointX="6" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.address" Width="1.5" PointX="3.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.applied_to" Width="1.5" PointX="6" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.bank_transaction" Width="1.5" PointX="8.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.client" Width="1.5" PointX="1.5" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.cooler" Width="1.5" PointX="3" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.cpu" Width="1.5" PointX="5.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.deposits_into_wallet" Width="1.5" PointX="10.5" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.discount_code" Width="1.5" PointX="1.5" PointY="30.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.gpu" Width="1.5" PointX="3" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.hdd" Width="1.5" PointX="3" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.locked_shopping_cart" Width="1.5" PointX="3.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.motherboard" Width="1.5" PointX="7.5" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.p_case" Width="1.5" PointX="3" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.power_supply" Width="1.5" PointX="8.25" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.private_code" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.product" Width="1.5" PointX="0.75" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.public_code" Width="1.5" PointX="3.75" PointY="36.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.ram_stick" Width="1.5" PointX="10.75" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.refer" Width="1.5" PointX="3.75" PointY="30.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.shopping_cart" Width="1.5" PointX="1.5" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.sm_slot_compatible_with" Width="1.5" PointX="9.75" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.SSD" Width="1.5" PointX="3" PointY="27.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.transaction" Width="1.5" PointX="6" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.vip_client" Width="1.5" PointX="3.75" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.wallet_transaction" Width="1.5" PointX="8.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.Cart_Total_Discount" Width="1.5" PointX="10.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.vw_TransactionDetails" Width="1.5" PointX="11.75" PointY="11.5" IsExpanded="true" />
+        <AssociationConnector Association="Model1.fk_added_to_locked" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.fk_added_to_product" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.fk_address" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.fk_applied_to_code" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.fk_applied_to_locked_number" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.fk_bank_transaction" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.fk_deposits_into_wallet_transaction" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.fk_client_id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.fk_deposits_into_wallet_client" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.fk_private_code_client" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.fk_refers_referee" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.fk_refers_referrer" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.fk_vip" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_COOLER_PRODUCT" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_CPU_PRODUCT" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.fk_private_code_discount_code" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.fk_public" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_GPU_PRODUCT" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_HDD_PRODUCT" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.fk_locked_shopping_cart" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.fk_motherboard_id_sm" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_MOTHERBOARD_PRODUCT" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_CASE_PRODUCT" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_POWER_SUPPLY_PRODUCT" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_RAM_STICK_PRODUCT" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_SSD_PRODUCT" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.fk_wallet_transaction" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.cc_socket_compatible_with" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.gm_slot_compatible_with" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.gp_connector_compatible_with" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.issued_for" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.ms_socket_compatible_with" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.rm_slot_compatible_with" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.subscribes" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
