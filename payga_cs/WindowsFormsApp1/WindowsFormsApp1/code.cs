@@ -49,9 +49,7 @@ namespace WindowsFormsApp1
                         if (validDiscountCodes.Any())
                         {
                             label4.Text = string.Join(Environment.NewLine, validDiscountCodes);
-                           // label3.AutoSize = true;
-                           // label3.MaximumSize = new Size(300, 0);
-                           // label3.TextAlign = ContentAlignment.MiddleLeft;
+         
                         }
                         else
                         {
@@ -62,7 +60,7 @@ namespace WindowsFormsApp1
                     else
                     {
                 
-                        MessageBox.Show("تاریخ انقضا موجود نیست");
+                        MessageBox.Show("There is no expiration date");
                     }
 
                  
