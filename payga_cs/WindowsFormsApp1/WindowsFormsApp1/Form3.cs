@@ -36,7 +36,7 @@ namespace WindowsFormsApp1
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            LoadUserControl();
+          
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -76,12 +76,17 @@ namespace WindowsFormsApp1
         }
         private void button1_Click(object sender, EventArgs e)
         {
-
+            LoadUserControl();
 
         }
         private void button3_Click(object sender, EventArgs e)
         {
 
+
+        }
+
+        private void code1_Load(object sender, EventArgs e)
+        {
 
         }
     }

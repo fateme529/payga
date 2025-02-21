@@ -40,9 +40,9 @@ namespace WindowsFormsApp1
             // pictureBox1
             // 
             this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.icons8_discount_150px_2;
-            this.pictureBox1.Location = new System.Drawing.Point(67, 181);
+            this.pictureBox1.Location = new System.Drawing.Point(36, 144);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(145, 153);
+            this.pictureBox1.Size = new System.Drawing.Size(231, 270);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 

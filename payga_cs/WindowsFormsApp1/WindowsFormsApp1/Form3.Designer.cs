@@ -40,8 +40,8 @@ namespace WindowsFormsApp1
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelUserInfo = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -195,6 +195,14 @@ namespace WindowsFormsApp1
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // panelUserInfo
+            // 
+            this.panelUserInfo.Location = new System.Drawing.Point(292, 46);
+            this.panelUserInfo.Margin = new System.Windows.Forms.Padding(4);
+            this.panelUserInfo.Name = "panelUserInfo";
+            this.panelUserInfo.Size = new System.Drawing.Size(1063, 703);
+            this.panelUserInfo.TabIndex = 2;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -204,14 +212,6 @@ namespace WindowsFormsApp1
             this.pictureBox1.Size = new System.Drawing.Size(121, 126);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
-            // 
-            // panelUserInfo
-            // 
-            this.panelUserInfo.Location = new System.Drawing.Point(292, 46);
-            this.panelUserInfo.Margin = new System.Windows.Forms.Padding(4);
-            this.panelUserInfo.Name = "panelUserInfo";
-            this.panelUserInfo.Size = new System.Drawing.Size(1063, 703);
-            this.panelUserInfo.TabIndex = 2;
             // 
             // Form3
             // 

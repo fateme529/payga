@@ -33,3 +33,4 @@ C:\Users\fdama\Desktop\payga\payga_cs\WindowsFormsApp1\WindowsFormsApp1\obj\Debu
 C:\Users\fdama\Desktop\payga\payga_cs\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.UserControl1.resources
 C:\Users\fdama\Desktop\payga\payga_cs\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.info.resources
 C:\Users\fdama\Desktop\payga\payga_cs\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.code.resources
+C:\Users\fdama\Desktop\payga\payga_cs\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
