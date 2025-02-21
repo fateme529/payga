@@ -29,8 +29,7 @@ C:\Users\fdama\Desktop\payga\payga_cs\WindowsFormsApp1\WindowsFormsApp1\bin\Debu
 C:\Users\fdama\Desktop\payga\payga_cs\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
 C:\Users\fdama\Desktop\payga\payga_cs\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\fdama\Desktop\payga\payga_cs\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
-C:\Users\fdama\Desktop\payga\payga_cs\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
 C:\Users\fdama\Desktop\payga\payga_cs\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form3.resources
 C:\Users\fdama\Desktop\payga\payga_cs\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.UserControl1.resources
 C:\Users\fdama\Desktop\payga\payga_cs\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.info.resources
-C:\Users\fdama\Desktop\payga\payga_cs\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.discount.resources
+C:\Users\fdama\Desktop\payga\payga_cs\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.code.resources

@@ -73,6 +73,12 @@
     <Compile Include="client.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="code.Designer.cs">
+      <DependentUpon>code.cs</DependentUpon>
+    </Compile>
     <Compile Include="cooler.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -81,12 +87,6 @@
     </Compile>
     <Compile Include="deposits_into_wallet.cs">
       <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="discount.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="discount.Designer.cs">
-      <DependentUpon>discount.cs</DependentUpon>
     </Compile>
     <Compile Include="discount_code.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -189,8 +189,8 @@
     <Compile Include="wallet_transaction.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="discount.resx">
-      <DependentUpon>discount.cs</DependentUpon>
+    <EmbeddedResource Include="code.resx">
+      <DependentUpon>code.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
