@@ -23,7 +23,7 @@ namespace WindowsFormsApp1
             {
                 var isVip = db.vip_client.Any(vc => vc.id == userid);
 
-                // چک کردن سبد خرید اول
+               
                 var cart1 = db.shopping_cart.FirstOrDefault(sc => sc.number == (userid * 100 + 1));
                 if (cart1 != null)
                 {
@@ -34,7 +34,7 @@ namespace WindowsFormsApp1
                     label2.Text = "سبد خرید اول موجود نیست";
                 }
 
-                // چک کردن سبدهای بعدی از 02 تا 05
+
                 for (int i = 2; i <= 5; i++)
                 {
                     int cartId = userid * 100 + i;
@@ -65,7 +65,7 @@ namespace WindowsFormsApp1
                     }
                     else
                     {
-                        // اگر سبد خرید موجود نباشد
+                   
                         switch (i)
                         {
                             case 2:

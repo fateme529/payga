@@ -148,6 +148,12 @@
     <Compile Include="motherboard.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="overviwe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="overviwe.Designer.cs">
+      <DependentUpon>overviwe.cs</DependentUpon>
+    </Compile>
     <Compile Include="power_supply.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -212,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="info.resx">
       <DependentUpon>info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="overviwe.resx">
+      <DependentUpon>overviwe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

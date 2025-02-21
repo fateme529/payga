@@ -10,9 +10,11 @@ namespace WindowsFormsApp1
         private info infoControl;
         private code codeControl;
         private cart cartControl;
+        private overviwe overviweControl;
         private bool isInfoLoaded = false;
         private bool isCodeLoaded = false;
         private bool isCartLoaded = false;
+        private bool isOverviwe = false;
 
         public Form3(int id, string firstName)
         {
@@ -61,6 +63,17 @@ namespace WindowsFormsApp1
                 panelUserInfo.Controls.Add(cartControl);
             }
         }
+        private void ower()
+        {
+            panelUserInfo.Controls.Clear();
+            if (!isOverviwe)
+            {
+                overviweControl = new overviwe(_id);
+                overviweControl.LoadUserData4(_id);
+                overviweControl.Dock = DockStyle.Fill;
+                panelUserInfo.Controls.Add(overviweControl);
+            }
+        }
 
         private void Form3_Load(object sender, EventArgs e)
         {
@@ -90,7 +103,7 @@ namespace WindowsFormsApp1
         private void button6_Click(object sender, EventArgs e)
         {
 
-            
+            ower();
         }
 
         private void button5_Click_1(object sender, EventArgs e)
@@ -119,6 +132,7 @@ namespace WindowsFormsApp1
 
             cart();
         }
+
 
         private void code1_Load(object sender, EventArgs e)
         {
