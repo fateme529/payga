@@ -37,5 +37,10 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void cart_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
