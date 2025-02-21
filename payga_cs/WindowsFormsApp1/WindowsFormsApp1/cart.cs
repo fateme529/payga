@@ -12,12 +12,23 @@ namespace WindowsFormsApp1
 {
     public partial class cart : UserControl
     {
-        public cart()
+        public cart(int id)
         {
             InitializeComponent();
+            LoadUserData3(id);
+        }
+        public void LoadUserData3(int userid)
+        {
+
+
+
+           
+
         }
 
-        private void label1_Click(object sender, EventArgs e)
+
+         
+            private void label1_Click(object sender, EventArgs e)
         {
 
         }

@@ -9,8 +9,10 @@ namespace WindowsFormsApp1
         private int _id;
         private info infoControl;
         private code codeControl;
+        private cart cartControl;
         private bool isInfoLoaded = false;
         private bool isCodeLoaded = false;
+        private bool isCartLoaded = false;
 
         public Form3(int id, string firstName)
         {
@@ -46,6 +48,17 @@ namespace WindowsFormsApp1
                 codeControl.LoadUserData2(_id);
                 codeControl.Dock = DockStyle.Fill;
                 panelUserInfo.Controls.Add(codeControl);
+            }
+        }
+        private void cart()
+        {
+            panelUserInfo.Controls.Clear();
+            if (!isCartLoaded)
+            {
+                cartControl = new cart(_id);
+                cartControl.LoadUserData3(_id);
+                cartControl.Dock = DockStyle.Fill;
+                panelUserInfo.Controls.Add(cartControl);
             }
         }
 
@@ -99,6 +112,12 @@ namespace WindowsFormsApp1
         {
             
             code();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+            cart();
         }
 
         private void code1_Load(object sender, EventArgs e)
