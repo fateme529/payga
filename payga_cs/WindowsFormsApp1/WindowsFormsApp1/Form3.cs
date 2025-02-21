@@ -8,6 +8,9 @@ namespace WindowsFormsApp1
     {
         private int _id;
         private info infoControl;
+        private code codeControl;
+        private bool isInfoLoaded = false;
+        private bool isCodeLoaded = false;
 
         public Form3(int id, string firstName)
         {
@@ -25,12 +28,24 @@ namespace WindowsFormsApp1
 
         private void LoadUserControl()
         {
-            if (infoControl == null)
+            panelUserInfo.Controls.Clear();
+            if (!isInfoLoaded)
             {
                 infoControl = new info(_id);
                 infoControl.LoadUserData(_id);  
                 infoControl.Dock = DockStyle.Fill;
                 panelUserInfo.Controls.Add(infoControl);
+            }
+        }
+        private void code()
+        {
+            panelUserInfo.Controls.Clear();
+            if (!isCodeLoaded)
+            {
+                codeControl = new code(_id);
+                codeControl.LoadUserData2(_id);
+                codeControl.Dock = DockStyle.Fill;
+                panelUserInfo.Controls.Add(codeControl);
             }
         }
 
@@ -76,13 +91,14 @@ namespace WindowsFormsApp1
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            
             LoadUserControl();
 
         }
         private void button3_Click(object sender, EventArgs e)
         {
-
-
+            
+            code();
         }
 
         private void code1_Load(object sender, EventArgs e)

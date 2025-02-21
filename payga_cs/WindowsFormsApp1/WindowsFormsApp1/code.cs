@@ -12,9 +12,14 @@ namespace WindowsFormsApp1
 {
     public partial class code : UserControl
     {
-        public code()
+        public code(int id)
         {
             InitializeComponent();
+            LoadUserData2(id);
+        }
+        public void LoadUserData2(int userid)
+        {
+
         }
     }
 }
