@@ -17,10 +17,10 @@ namespace WindowsFormsApp1
         {
             using (var db = new db_Entities2())
             {
-              
+                // دریافت آخرین تراکنش این کاربر از vw_TransactionDetails
                 var lastTransaction = db.vw_TransactionDetails
                     .Where(t => t.issued_for_id == userid)
-                    .OrderByDescending(t => t.transaction_time)  
+                    .OrderByDescending(t => t.transaction_time)
                     .FirstOrDefault();
 
                 if (lastTransaction != null)
@@ -28,33 +28,38 @@ namespace WindowsFormsApp1
                     var cartNumber = lastTransaction.cart_number;
                     var lockedNumber = lastTransaction.locked_number;
 
-                  
-                    var products = db.added_to
+                    // دریافت اطلاعات محصولات از added_to
+                    var productsInCart = db.added_to
                         .Where(a => a.cart_number == cartNumber && a.locked_number == lockedNumber)
-                        .Select(a => a.product_id) 
+                        .Select(a => new { a.product_id, a.quantity }) // دریافت product_id و quantity
                         .ToList();
 
-                    if (products.Any())
+                    if (productsInCart.Any())
                     {
-                       
-                        var productDetails = db.products 
-                            .Where(p => products.Contains(p.id))  
+                        // جدا کردن product_idها در یک لیست ساده
+                        var productIds = productsInCart.Select(a => a.product_id).ToList();
+
+                        // دریافت اطلاعات محصولات از جدول products
+                        var productDetails = db.products
+                            .Where(p => productIds.Contains(p.id)) // مقدار product_id را در یک لیست ذخیره کردیم
                             .Select(p => new
                             {
-                              //  p.product_name,
-                                p.category, 
-                               // p.product_id
+                                p.id,          // شناسه محصول
+                                p.category     // دسته‌بندی محصول
                             })
                             .ToList();
 
-                     
                         StringBuilder sb = new StringBuilder();
                         foreach (var product in productDetails)
                         {
-                            sb.AppendLine($"Product:  {product.category}");
+                            // پیدا کردن quantity از جدول added_to
+                            var quantity = productsInCart
+                                .First(a => a.product_id == product.id).quantity;
+
+                            sb.AppendLine($"Product: {product.category}, Quantity: {quantity}");
                         }
 
-                       
+                        // نمایش اطلاعات در label2
                         label2.Text = sb.ToString();
                     }
                     else
@@ -64,19 +69,19 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
-                    label2.Text = "This user has no successful transactions.";
+                    label2.Text = "این کاربر هیچ تراکنش موفقی ندارد.";
                 }
             }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-           
+
         }
     }
 }
