@@ -37,8 +37,8 @@ namespace WindowsFormsApp1
                     if (products.Any())
                     {
                        
-                        var productDetails = db.products // فرض بر این است که جدول Products شامل اطلاعات محصولات است
-                            .Where(p => products.Contains(p.id))  // فقط محصولاتی که در سبد خرید هستند
+                        var productDetails = db.products 
+                            .Where(p => products.Contains(p.id))  
                             .Select(p => new
                             {
                               //  p.product_name,
@@ -64,7 +64,7 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
-                    label2.Text = "هیچ تراکنشی برای این کاربر یافت نشد";
+                    label2.Text = "No transactions found for this user.";
                 }
             }
         }
