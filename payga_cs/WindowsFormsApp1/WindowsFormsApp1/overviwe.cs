@@ -64,7 +64,7 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
-                    label2.Text = "No transactions found for this user.";
+                    label2.Text = "This user has no successful transactions.";
                 }
             }
         }
