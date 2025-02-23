@@ -48,8 +48,8 @@ values('all_free')
 
 INSERT INTO product(category, image, current_price, stock_count, brand, model)
 VALUES (
-    'laptop', 
-    (SELECT BulkColumn FROM OPENROWSET(BULK 'C:\Users\fdama\Pictures\smail.PNG', SINGLE_BLOB) AS img), 
+    'sib', 
+    (SELECT BulkColumn FROM OPENROWSET(BULK 'C:\Users\fdama\Pictures\1920X1080.jpg', SINGLE_BLOB) AS img), 
    100, 
     15, 
     'dell', 
@@ -57,7 +57,7 @@ VALUES (
 );
 
 INSERT INTO added_to(client_id,cart_number,locked_number,product_id,quantity)
-values(101,10103,57,29,1)
+values(95,9501,61,33,7)
 
 INSERT INTO applied_to(client_id,cart_number,locked_number,app_code)
 VALUES(44,4402,42,'id_discount_44_7828F2CB')
@@ -77,14 +77,14 @@ INSERT INTO vip_client(id, Subscription_expiration_time)
 VALUES (42, CONVERT(DATE, '2028-10-07 ', 120));
 
 INSERT INTO locked_shopping_cart(id,cart_number)
-VALUES (53,5301)
+VALUES (95,9501)
 
 INSERT INTO client(phone_number,first_name,last_name,referal_code)
 VALUES(900889088,'hale','samavat',44)
 
 
 INSERT INTO issued_for(tracking_code,id_client,cart_number,locked_number)
-VALUES(46,101,10103,57)
+VALUES(49,95,9501,61)
 
 
 INSERT INTO transactions(status)
