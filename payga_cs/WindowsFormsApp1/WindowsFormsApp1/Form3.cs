@@ -79,7 +79,7 @@ namespace WindowsFormsApp1
         private void time()
         {
             panelUserInfo.Controls.Clear();
-            if (!isOverviwe)
+            if (!isTime)
             {
                 timeControl = new time(_id);
                 timeControl.LoadUserData5(_id);
