@@ -20,12 +20,12 @@ namespace WindowsFormsApp1
                 var transactions = db.vw_TransactionDetails
                     .Where(t => t.issued_for_id == userid)
                     .OrderByDescending(t => t.transaction_time)
-                    .Take(5) 
+                    .Take(5)
                     .ToList();
 
                 if (transactions.Any())
                 {
-                    int i = 2; 
+                    int i = 2;
 
                     foreach (var lastTransaction in transactions)
                     {
@@ -43,6 +43,7 @@ namespace WindowsFormsApp1
                             .ToList();
 
                         StringBuilder sb = new StringBuilder();
+                        string productDetailsString = ""; 
 
                         if (productsInCart.Any())
                         {
@@ -62,16 +63,26 @@ namespace WindowsFormsApp1
                                 var quantity = productsInCart
                                     .First(a => a.product_id == product.id).quantity;
 
-                                sb.AppendLine($"Product: {product.category}, Quantity: {quantity}");
+                           
+                                productDetailsString += $"Product: {product.category}, Quantity: {quantity}  |  ";
                             }
 
+                      
+                            if (productDetailsString.Length > 0)
+                            {
+                                productDetailsString = productDetailsString.Substring(0, productDetailsString.Length - 4);
+                            }
+
+                            sb.Append(productDetailsString); 
+
+                           
                             if (cartTotalAfterIssuedFor != null)
                             {
-                                sb.AppendLine($"Final total: {cartTotalAfterIssuedFor:C}");
+                                sb.AppendLine($"\nFinal total: {cartTotalAfterIssuedFor:C}");
                             }
                             else
                             {
-                                sb.AppendLine("Final Total is not available.");
+                                sb.AppendLine("\nFinal Total is not available.");
                             }
                         }
                         else
@@ -79,31 +90,36 @@ namespace WindowsFormsApp1
                             sb.AppendLine("No products found in the shopping cart.");
                         }
 
-                
+                      
                         if (i == 2)
                         {
                             label2.Text = sb.ToString();
                             label2.Font = new System.Drawing.Font(label2.Font.FontFamily, 8);
+                            label2.AutoSize = true;
                         }
                         else if (i == 3)
                         {
                             label3.Text = sb.ToString();
                             label3.Font = new System.Drawing.Font(label3.Font.FontFamily, 8);
+                            label3.AutoSize = true;
                         }
                         else if (i == 4)
                         {
                             label4.Text = sb.ToString();
                             label4.Font = new System.Drawing.Font(label4.Font.FontFamily, 8);
+                            label4.AutoSize = true;
                         }
                         else if (i == 5)
                         {
                             label5.Text = sb.ToString();
                             label5.Font = new System.Drawing.Font(label5.Font.FontFamily, 8);
+                            label5.AutoSize = true;
                         }
                         else if (i == 6)
                         {
                             label6.Text = sb.ToString();
                             label6.Font = new System.Drawing.Font(label6.Font.FontFamily, 8);
+                            label6.AutoSize = true;
                         }
 
                         i++;
@@ -111,7 +127,7 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
-                  
+                   
                     label2.Text = "This user has no successful transactions.";
                     label3.Text = "This user has no successful transactions.";
                     label4.Text = "This user has no successful transactions.";
