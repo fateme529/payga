@@ -231,6 +231,12 @@
     <Compile Include="SSD.cs">
       <DependentUpon>Model3.tt</DependentUpon>
     </Compile>
+    <Compile Include="time.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="time.Designer.cs">
+      <DependentUpon>time.cs</DependentUpon>
+    </Compile>
     <Compile Include="transaction.cs">
       <DependentUpon>Model3.tt</DependentUpon>
     </Compile>
@@ -283,6 +289,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="time.resx">
+      <DependentUpon>time.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>

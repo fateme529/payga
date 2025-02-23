@@ -36,3 +36,4 @@ C:\Users\fdama\Desktop\payga\payga_cs\WindowsFormsApp1\WindowsFormsApp1\obj\Debu
 C:\Users\fdama\Desktop\payga\payga_cs\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.cart.resources
 C:\Users\fdama\Desktop\payga\payga_cs\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
 C:\Users\fdama\Desktop\payga\payga_cs\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.overviwe.resources
+C:\Users\fdama\Desktop\payga\payga_cs\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.time.resources

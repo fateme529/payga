@@ -40,9 +40,10 @@ namespace WindowsFormsApp1
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.panelUserInfo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelUserInfo = new System.Windows.Forms.Panel();
             this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
+            this.button7 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -99,6 +100,7 @@ namespace WindowsFormsApp1
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(113)))), ((int)(((byte)(73)))));
+            this.panel2.Controls.Add(this.button7);
             this.panel2.Controls.Add(this.button6);
             this.panel2.Controls.Add(this.button5);
             this.panel2.Controls.Add(this.button4);
@@ -198,14 +200,6 @@ namespace WindowsFormsApp1
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // panelUserInfo
-            // 
-            this.panelUserInfo.Location = new System.Drawing.Point(288, 46);
-            this.panelUserInfo.Margin = new System.Windows.Forms.Padding(4);
-            this.panelUserInfo.Name = "panelUserInfo";
-            this.panelUserInfo.Size = new System.Drawing.Size(1067, 772);
-            this.panelUserInfo.TabIndex = 2;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -216,6 +210,14 @@ namespace WindowsFormsApp1
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // panelUserInfo
+            // 
+            this.panelUserInfo.Location = new System.Drawing.Point(288, 46);
+            this.panelUserInfo.Margin = new System.Windows.Forms.Padding(4);
+            this.panelUserInfo.Name = "panelUserInfo";
+            this.panelUserInfo.Size = new System.Drawing.Size(1067, 772);
+            this.panelUserInfo.TabIndex = 2;
+            // 
             // entityCommand1
             // 
             this.entityCommand1.CommandTimeout = 0;
@@ -223,6 +225,23 @@ namespace WindowsFormsApp1
             this.entityCommand1.Connection = null;
             this.entityCommand1.EnablePlanCaching = true;
             this.entityCommand1.Transaction = null;
+            // 
+            // button7
+            // 
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(145)))), ((int)(((byte)(105)))));
+            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(145)))), ((int)(((byte)(105)))));
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(0, 423);
+            this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(285, 44);
+            this.button7.TabIndex = 12;
+            this.button7.Text = "VIP Time";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // Form3
             // 
@@ -262,5 +281,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Panel panelUserInfo;
         private info info1;
         private System.Data.Entity.Core.EntityClient.EntityCommand entityCommand1;
+        private System.Windows.Forms.Button button7;
     }
 }
