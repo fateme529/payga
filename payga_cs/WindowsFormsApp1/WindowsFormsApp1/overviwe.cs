@@ -68,7 +68,7 @@ namespace WindowsFormsApp1
                  
                         if (cartTotalAfterIssuedFor != null)
                         {
-                            sb.AppendLine($"Cart Total After Issued For: {cartTotalAfterIssuedFor:C}");
+                            sb.AppendLine($" final total: {cartTotalAfterIssuedFor:C}");
                         }
                         else
                         {
