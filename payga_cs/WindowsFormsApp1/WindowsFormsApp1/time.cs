@@ -14,7 +14,7 @@ namespace WindowsFormsApp1
 
         public void LoadUserData5(int userid)
         {
-            using (var db = new db_Entities3())
+            using (var db = new db_Entities5())
             {
                 
                 var vipClient = db.vip_client
@@ -42,7 +42,16 @@ namespace WindowsFormsApp1
                     
                     label4.Text = "User is not a VIP client.";
                 }
+                var vip_profit = db.vw_ClientTransactionPercentage
+                    .FirstOrDefault(vw => vw.client_id == userid);
+
+                if(vip_profit != null)
+                {
+                    label5.Text = $"{vip_profit.transaction_15_percent}";
+                }
             }
+
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

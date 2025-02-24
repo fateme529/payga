@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model5StoreContainer" CdmEntityContainer="db_Entities5">
+    <EntitySetMapping Name="added_to">
+      <EntityTypeMapping TypeName="Model5.added_to">
+        <MappingFragment StoreEntitySet="added_to">
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="cart_number" ColumnName="cart_number" />
+          <ScalarProperty Name="locked_number" ColumnName="locked_number" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="cart_price" ColumnName="cart_price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="addresses">
+      <EntityTypeMapping TypeName="Model5.address">
+        <MappingFragment StoreEntitySet="address">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="province" ColumnName="province" />
+          <ScalarProperty Name="remainder" ColumnName="remainder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="applied_to">
+      <EntityTypeMapping TypeName="Model5.applied_to">
+        <MappingFragment StoreEntitySet="applied_to">
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="cart_number" ColumnName="cart_number" />
+          <ScalarProperty Name="locked_number" ColumnName="locked_number" />
+          <ScalarProperty Name="app_code" ColumnName="app_code" />
+          <ScalarProperty Name="app_time" ColumnName="app_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bank_transaction">
+      <EntityTypeMapping TypeName="Model5.bank_transaction">
+        <MappingFragment StoreEntitySet="bank_transaction">
+          <ScalarProperty Name="tracking_code" ColumnName="tracking_code" />
+          <ScalarProperty Name="card_number" ColumnName="card_number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="clients">
+      <EntityTypeMapping TypeName="Model5.client">
+        <MappingFragment StoreEntitySet="client">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="wallet_balance" ColumnName="wallet_balance" />
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+          <ScalarProperty Name="referal_code" ColumnName="referal_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="coolers">
+      <EntityTypeMapping TypeName="Model5.cooler">
+        <MappingFragment StoreEntitySet="cooler">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="maximum_rotational_speed" ColumnName="maximum_rotational_speed" />
+          <ScalarProperty Name="wattage" ColumnName="wattage" />
+          <ScalarProperty Name="fan_size" ColumnName="fan_size" />
+          <ScalarProperty Name="cooling_method" ColumnName="cooling_method" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="width" ColumnName="width" />
+          <ScalarProperty Name="depth" ColumnName="depth" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cpus">
+      <EntityTypeMapping TypeName="Model5.cpu">
+        <MappingFragment StoreEntitySet="cpu">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="maximum_addressable_memory_limit" ColumnName="maximum_addressable_memory_limit" />
+          <ScalarProperty Name="boost_frequency" ColumnName="boost_frequency" />
+          <ScalarProperty Name="base_frequency" ColumnName="base_frequency" />
+          <ScalarProperty Name="number_of_cores" ColumnName="number_of_cores" />
+          <ScalarProperty Name="number_of_Threads" ColumnName="number_of_Threads" />
+          <ScalarProperty Name="microarchitecture" ColumnName="microarchitecture" />
+          <ScalarProperty Name="generation" ColumnName="generation" />
+          <ScalarProperty Name="wattage" ColumnName="wattage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="deposits_into_wallet">
+      <EntityTypeMapping TypeName="Model5.deposits_into_wallet">
+        <MappingFragment StoreEntitySet="deposits_into_wallet">
+          <ScalarProperty Name="tracking_code" ColumnName="tracking_code" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="discount_code">
+      <EntityTypeMapping TypeName="Model5.discount_code">
+        <MappingFragment StoreEntitySet="discount_code">
+          <ScalarProperty Name="dis_code" ColumnName="dis_code" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="dis_limit" ColumnName="dis_limit" />
+          <ScalarProperty Name="usage_count" ColumnName="usage_count" />
+          <ScalarProperty Name="expiration_date" ColumnName="expiration_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gpus">
+      <EntityTypeMapping TypeName="Model5.gpu">
+        <MappingFragment StoreEntitySet="gpu">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="clock_speed" ColumnName="clock_speed" />
+          <ScalarProperty Name="ram_size" ColumnName="ram_size" />
+          <ScalarProperty Name="number_of_fans" ColumnName="number_of_fans" />
+          <ScalarProperty Name="wattage" ColumnName="wattage" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="width" ColumnName="width" />
+          <ScalarProperty Name="depth" ColumnName="depth" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hdds">
+      <EntityTypeMapping TypeName="Model5.hdd">
+        <MappingFragment StoreEntitySet="hdd">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="rotational_speed" ColumnName="rotational_speed" />
+          <ScalarProperty Name="wattage" ColumnName="wattage" />
+          <ScalarProperty Name="capacity" ColumnName="capacity" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="width" ColumnName="width" />
+          <ScalarProperty Name="depth" ColumnName="depth" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="locked_shopping_cart">
+      <EntityTypeMapping TypeName="Model5.locked_shopping_cart">
+        <MappingFragment StoreEntitySet="locked_shopping_cart">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="cart_number" ColumnName="cart_number" />
+          <ScalarProperty Name="number_lock" ColumnName="number_lock" />
+          <ScalarProperty Name="locked_time" ColumnName="locked_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="motherboards">
+      <EntityTypeMapping TypeName="Model5.motherboard">
+        <MappingFragment StoreEntitySet="motherboard">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="chipset" ColumnName="chipset" />
+          <ScalarProperty Name="number_of_memory_slots" ColumnName="number_of_memory_slots" />
+          <ScalarProperty Name="memory_speed_range" ColumnName="memory_speed_range" />
+          <ScalarProperty Name="wattage" ColumnName="wattage" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="width" ColumnName="width" />
+          <ScalarProperty Name="depth" ColumnName="depth" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="p_case">
+      <EntityTypeMapping TypeName="Model5.p_case">
+        <MappingFragment StoreEntitySet="p_case">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="number_of_fans" ColumnName="number_of_fans" />
+          <ScalarProperty Name="fan_size" ColumnName="fan_size" />
+          <ScalarProperty Name="wattage" ColumnName="wattage" />
+          <ScalarProperty Name="case_type" ColumnName="case_type" />
+          <ScalarProperty Name="material" ColumnName="material" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="width" ColumnName="width" />
+          <ScalarProperty Name="depth" ColumnName="depth" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="power_supply">
+      <EntityTypeMapping TypeName="Model5.power_supply">
+        <MappingFragment StoreEntitySet="power_supply">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="supported_wattage" ColumnName="supported_wattage" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="width" ColumnName="width" />
+          <ScalarProperty Name="depth" ColumnName="depth" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="private_code">
+      <EntityTypeMapping TypeName="Model5.private_code">
+        <MappingFragment StoreEntitySet="private_code">
+          <ScalarProperty Name="pri_code" ColumnName="pri_code" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pri_time" ColumnName="pri_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products">
+      <EntityTypeMapping TypeName="Model5.product">
+        <MappingFragment StoreEntitySet="product">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="current_price" ColumnName="current_price" />
+          <ScalarProperty Name="stock_count" ColumnName="stock_count" />
+          <ScalarProperty Name="brand" ColumnName="brand" />
+          <ScalarProperty Name="model" ColumnName="model" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="public_code">
+      <EntityTypeMapping TypeName="Model5.public_code">
+        <MappingFragment StoreEntitySet="public_code">
+          <ScalarProperty Name="pub_code" ColumnName="pub_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ram_stick">
+      <EntityTypeMapping TypeName="Model5.ram_stick">
+        <MappingFragment StoreEntitySet="ram_stick">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="frequency" ColumnName="frequency" />
+          <ScalarProperty Name="capacity" ColumnName="capacity" />
+          <ScalarProperty Name="generation" ColumnName="generation" />
+          <ScalarProperty Name="wattage" ColumnName="wattage" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="width" ColumnName="width" />
+          <ScalarProperty Name="depth" ColumnName="depth" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="refers">
+      <EntityTypeMapping TypeName="Model5.refer">
+        <MappingFragment StoreEntitySet="refers">
+          <ScalarProperty Name="referee" ColumnName="referee" />
+          <ScalarProperty Name="referrer" ColumnName="referrer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="shopping_cart">
+      <EntityTypeMapping TypeName="Model5.shopping_cart">
+        <MappingFragment StoreEntitySet="shopping_cart">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sm_slot_compatible_with">
+      <EntityTypeMapping TypeName="Model5.sm_slot_compatible_with">
+        <MappingFragment StoreEntitySet="sm_slot_compatible_with">
+          <ScalarProperty Name="motherboard_id_sm" ColumnName="motherboard_id_sm" />
+          <ScalarProperty Name="ssd_id_sm" ColumnName="ssd_id_sm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SSDs">
+      <EntityTypeMapping TypeName="Model5.SSD">
+        <MappingFragment StoreEntitySet="SSD">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="capacity" ColumnName="capacity" />
+          <ScalarProperty Name="wattage" ColumnName="wattage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="transactions">
+      <EntityTypeMapping TypeName="Model5.transaction">
+        <MappingFragment StoreEntitySet="transactions">
+          <ScalarProperty Name="tracking_code" ColumnName="tracking_code" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vip_client">
+      <EntityTypeMapping TypeName="Model5.vip_client">
+        <MappingFragment StoreEntitySet="vip_client">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Subscription_expiration_time" ColumnName="Subscription_expiration_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wallet_transaction">
+      <EntityTypeMapping TypeName="Model5.wallet_transaction">
+        <MappingFragment StoreEntitySet="wallet_transaction">
+          <ScalarProperty Name="tracking_code" ColumnName="tracking_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cart_Total_Discount">
+      <EntityTypeMapping TypeName="Model5.Cart_Total_Discount">
+        <MappingFragment StoreEntitySet="Cart_Total_Discount">
+          <ScalarProperty Name="cart_number" ColumnName="cart_number" />
+          <ScalarProperty Name="locked_number" ColumnName="locked_number" />
+          <ScalarProperty Name="cart_total" ColumnName="cart_total" />
+          <ScalarProperty Name="discount_codes" ColumnName="discount_codes" />
+          <ScalarProperty Name="total_discount_amount" ColumnName="total_discount_amount" />
+          <ScalarProperty Name="final_total" ColumnName="final_total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_CartTotalAfterIssuedFor">
+      <EntityTypeMapping TypeName="Model5.vw_CartTotalAfterIssuedFor">
+        <MappingFragment StoreEntitySet="vw_CartTotalAfterIssuedFor">
+          <ScalarProperty Name="id_client" ColumnName="id_client" />
+          <ScalarProperty Name="cart_number" ColumnName="cart_number" />
+          <ScalarProperty Name="locked_number" ColumnName="locked_number" />
+          <ScalarProperty Name="final_total" ColumnName="final_total" />
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_ClientTransactionPercentage">
+      <EntityTypeMapping TypeName="Model5.vw_ClientTransactionPercentage">
+        <MappingFragment StoreEntitySet="vw_ClientTransactionPercentage">
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="transaction_15_percent" ColumnName="transaction_15_percent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_TransactionDetails">
+      <EntityTypeMapping TypeName="Model5.vw_TransactionDetails">
+        <MappingFragment StoreEntitySet="vw_TransactionDetails">
+          <ScalarProperty Name="tracking_code" ColumnName="tracking_code" />
+          <ScalarProperty Name="transaction_time" ColumnName="transaction_time" />
+          <ScalarProperty Name="issued_for_id" ColumnName="issued_for_id" />
+          <ScalarProperty Name="cart_number" ColumnName="cart_number" />
+          <ScalarProperty Name="locked_number" ColumnName="locked_number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="cc_socket_compatible_with" TypeName="Model5.cc_socket_compatible_with" StoreEntitySet="cc_socket_compatible_with">
+      <EndProperty Name="cooler">
+        <ScalarProperty Name="id" ColumnName="cooler_id" />
+      </EndProperty>
+      <EndProperty Name="cpu">
+        <ScalarProperty Name="id" ColumnName="cpu_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="gm_slot_compatible_with" TypeName="Model5.gm_slot_compatible_with" StoreEntitySet="gm_slot_compatible_with">
+      <EndProperty Name="gpu">
+        <ScalarProperty Name="id" ColumnName="gpu_id_gm" />
+      </EndProperty>
+      <EndProperty Name="motherboard">
+        <ScalarProperty Name="id" ColumnName="motherboard_id_gm" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="gp_connector_compatible_with" TypeName="Model5.gp_connector_compatible_with" StoreEntitySet="gp_connector_compatible_with">
+      <EndProperty Name="gpu">
+        <ScalarProperty Name="id" ColumnName="gpu_id_connector" />
+      </EndProperty>
+      <EndProperty Name="power_supply">
+        <ScalarProperty Name="id" ColumnName="power_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="issued_for" TypeName="Model5.issued_for" StoreEntitySet="issued_for">
+      <EndProperty Name="locked_shopping_cart">
+        <ScalarProperty Name="id" ColumnName="id_client" />
+        <ScalarProperty Name="cart_number" ColumnName="cart_number" />
+        <ScalarProperty Name="number_lock" ColumnName="locked_number" />
+      </EndProperty>
+      <EndProperty Name="transactions">
+        <ScalarProperty Name="tracking_code" ColumnName="tracking_code" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ms_socket_compatible_with" TypeName="Model5.ms_socket_compatible_with" StoreEntitySet="ms_socket_compatible_with">
+      <EndProperty Name="cpu">
+        <ScalarProperty Name="id" ColumnName="cpu_id" />
+      </EndProperty>
+      <EndProperty Name="motherboard">
+        <ScalarProperty Name="id" ColumnName="motherboard_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="rm_slot_compatible_with" TypeName="Model5.rm_slot_compatible_with" StoreEntitySet="rm_slot_compatible_with">
+      <EndProperty Name="motherboard">
+        <ScalarProperty Name="id" ColumnName="motherboard_id_fk" />
+      </EndProperty>
+      <EndProperty Name="ram_stick">
+        <ScalarProperty Name="id" ColumnName="ram_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="subscribes" TypeName="Model5.subscribes" StoreEntitySet="subscribes">
+      <EndProperty Name="client">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+      <EndProperty Name="transactions">
+        <ScalarProperty Name="tracking_code" ColumnName="tracking_code" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

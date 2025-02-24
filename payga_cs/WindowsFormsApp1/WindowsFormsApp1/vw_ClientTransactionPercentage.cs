@@ -12,12 +12,9 @@ namespace WindowsFormsApp1
     using System;
     using System.Collections.Generic;
     
-    public partial class vw_CartTotalAfterIssuedFor
+    public partial class vw_ClientTransactionPercentage
     {
-        public int id_client { get; set; }
-        public int cart_number { get; set; }
-        public int locked_number { get; set; }
-        public Nullable<decimal> final_total { get; set; }
-        public Nullable<System.DateTime> timestamp { get; set; }
+        public int client_id { get; set; }
+        public Nullable<decimal> transaction_15_percent { get; set; }
     }
 }

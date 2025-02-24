@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Linq;  
+
 
 namespace WindowsFormsApp1
 {
@@ -147,8 +149,20 @@ namespace WindowsFormsApp1
         }
         private void button7_Click(object sender, EventArgs e)
         {
+            using (var db = new db_Entities5())
 
-            time();
+            {   var vipClient = db.vip_client.FirstOrDefault(v => v.id == _id);
+
+            if (vipClient != null)
+            {
+                time();
+            }
+            else
+            {
+             
+                MessageBox.Show("You are not a VIP user.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            }
         }
 
 
