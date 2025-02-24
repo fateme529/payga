@@ -6,7 +6,6 @@ values(8,2)
 select* from refers
 
 
-select*from vip_client
 
 select* from product
 select* from public_code
@@ -21,6 +20,7 @@ select*from applied_to
 select*from subscribes
 select* from private_code
 select*from Cart_Total_Discount
+
 select* from client
 
 select*from product
@@ -33,6 +33,9 @@ select* from bank_transaction
 select* from deposits_into_wallet
 select* from vw_TransactionDetails
 select* from vw_CartTotalAfterIssuedFor
+select* from  vw_ClientTransactionPercentage
+select*from vip_client
+
 
 
 
@@ -40,7 +43,7 @@ INSERT INTO discount_code(dis_code,amount,dis_limit,usage_count,expiration_date)
 VALUES ('all_free_0',50,1000000,1,'2001/10/9')
 
 INSERT INTO vip_client(id,Subscription_expiration_time)
-VALUES(4,'2027-10-07')
+VALUES()
 
 INSERT INTO public_code (pub_code)
 values('all_free')
@@ -57,7 +60,7 @@ VALUES (
 );
 
 INSERT INTO added_to(client_id,cart_number,locked_number,product_id,quantity)
-values(95,9501,61,33,7)
+values(103,10301,66,33,1)
 
 INSERT INTO applied_to(client_id,cart_number,locked_number,app_code)
 VALUES(44,4402,42,'id_discount_44_7828F2CB')
@@ -65,7 +68,7 @@ VALUES(44,4402,42,'id_discount_44_7828F2CB')
 
 
 INSERT INTO subscribes(tracking_code,id)
-VALUES(10,44)
+VALUES(55,103)
 
 
 INSERT INTO deposits_into_wallet(tracking_code,id,amount)
@@ -77,14 +80,14 @@ INSERT INTO vip_client(id, Subscription_expiration_time)
 VALUES (42, CONVERT(DATE, '2028-10-07 ', 120));
 
 INSERT INTO locked_shopping_cart(id,cart_number)
-VALUES (95,9501)
+VALUES (103,10301)
 
-INSERT INTO client(phone_number,first_name,last_name,referal_code)
-VALUES(900889088,'hale','samavat',44)
+INSERT INTO client(phone_number,first_name,last_name,wallet_balance)
+VALUES(09201380474,'fati','samavat',10000)
 
 
 INSERT INTO issued_for(tracking_code,id_client,cart_number,locked_number)
-VALUES(49,95,9501,61)
+VALUES(57,103,10301,66)
 
 
 INSERT INTO transactions(status)
