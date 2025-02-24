@@ -29,18 +29,18 @@ namespace WindowsFormsApp1
                     if (remainingTime.TotalSeconds > 0)
                     {
                         
-                        label2.Text = $"Remaining Time: {remainingTime.Days} days, {remainingTime.Hours} hours, {remainingTime.Minutes} minutes";
+                        label4.Text = $"Remaining Time: {remainingTime.Days} days, {remainingTime.Hours} hours, {remainingTime.Minutes} minutes";
                     }
                     else
                     {
                        
-                        label2.Text = "Your subscription has expired.";
+                        label4.Text = "Your subscription has expired.";
                     }
                 }
                 else
                 {
                     
-                    label2.Text = "User is not a VIP client.";
+                    label4.Text = "User is not a VIP client.";
                 }
             }
         }
@@ -56,6 +56,11 @@ namespace WindowsFormsApp1
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }
